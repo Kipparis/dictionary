@@ -10,11 +10,16 @@ difficult situation to learn more.
 
 # How many dependencies
 You must have **_python_**.  
-`python` dependencies are collected in [reqs.txt](https://github.com/Kipparis/dictionary/blob/master/reqs.txt)
-file, which will install database tools ([peewee](https://github.com/coleifer/peewee)).  
+All dependencies are collected in [reqs.txt](https://github.com/Kipparis/dictionary/blob/master/reqs.txt)
+file  
+Most noticable list of them:  
+
++ database tools ([peewee](https://github.com/coleifer/peewee)).  
++ fullscreen interactive mode ([prompt_toolkit](https://python-prompt-toolkit.readthedocs.io/en/master/index.html))  
 
 # How to use
 
 
 # Contributing
 I will appreciate any advice or pull request that you make.  
+
