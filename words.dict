@@ -1,4 +1,15 @@
-### TODO: add pronounciation in []
+# syntax:
+# [header]
+#   foreign word - native word - description - usage example
+#
+# foreign word syntax:
+# native word syntax:
+# description syntax:
+# usage example:
+#
+# to reach better experience only native word must be in native language
+
+# grammar{{{
 [Grammar]
 noun - существительное - subject or object of sentence
 pronoun - местоимение - "refers to" a noun
@@ -202,11 +213,13 @@ pickles - соления
 muesli - мюсли
 pineapple - ананас
 pour - наливать
-
+# }}}
+# materials{{{
 [Materials]
 cotton - хлопок
 leather - кожа
-
+# }}}
+# apartment{{{
 [Apartment]
 furniture - мебель
 sofa - диван
@@ -220,15 +233,18 @@ bed - постель
 pillow - подушка
 ceil - потолок
 plumbing - водопровод
-
+# }}}
+# preposition of place{{{
 [Preposition of place]
 beside\near - рядом
 far away from - далеко
-
+# }}}
+# lighing{{{
 [Lighing]
 candle - свеча
 match - спичка
-
+# }}}
+# learning{{{
 [Learning]
 take notes - делать записи
 librarian - библиотекарь
@@ -237,7 +253,8 @@ chalk - мелки
 chalkboard - доска
 flunking - завалил
 distract - отвлекать
-
+# }}}
+# money{{{
 [Money]
 write a check - выписать чек
 sign a check - подписать чек
@@ -249,28 +266,47 @@ cash a check - обналичить чек
 stand in line - стоять в очереди
 bank teller - банковский кассир\работник банка
 bank counter - окошко в банке
-
+# }}}
+# general{{{
 [General]
 man - мужчина
 men - мужчины
 people - люди
 dream - мечтать
-poverty - бедность
+poverty - бедность - жестко
 admire - восхищаться
 inch - дюйм
 laundromat - прачечная-автомат
 cruel - жестокий
 prescription - рецепт (на лекарство)
-
+abandoned - заброшенный
+contingency - случайность \ непредвиденные обстоятельства
+suffices - хватает (на что-то) - Food buyed will suffice for all of us
+# }}}
+# hygiene{{{
 [Hygiene]
 shave - брить
-
+# }}}
+# verbs{{{
 [Verbs]
 absent - отсутствовать
-
+dangle - свисать
+bloat - раздуваться
+bulge - выпирать
+suspend - подвешивать \ приостанавливать
+jolt - трясти
+gaze - вглядываться
+hiss out - выходить со свистом
+seeth - кипеть \ бурлить \ пениться
+roil - взбалтывать
+# }}}
+# adverbs{{{
 [Adverbs]
 fluently - бегло
-
+limply - безвольно
+rigidly - жестко
+# }}}
+# nationalities{{{
 [Nationalities]
 American
 Canadian
@@ -283,12 +319,22 @@ Korean
 Malaysian
 Mexican
 Saudi Arabian
-
+# }}}
+# phrase{{{
 [Phrase]
 burn that into your brain
 in many respects - во многих отношениях
 to look like - быть похожим
 to turn on//off - включать//выключать
-
-### TODO: implement this
+concerning - что касается
+like the rest of the lot - как и все остальные
+he saw to it - он проследил за этим/он позаботился об этом
+in our midst - среди нас
+ill treatment - жестокое обращение
+jolt awake - проснуться
+worn away in patches - стираться в клочья
+ship went down - корабль затонул
+chapter hall - главный зал
+roils and seethes - бурлит и бурлит
+# }}}
 [Irregular plural nouns]

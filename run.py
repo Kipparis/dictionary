@@ -251,7 +251,6 @@ if args.interactive:
         '''
         Pressing `h` will popup help page
         '''
-        # TODO: procedurely generate help page from function docstrings
 
     app = Application(
             layout=Layout(root_container),
