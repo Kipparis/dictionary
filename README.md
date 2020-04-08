@@ -32,6 +32,8 @@ Most noticable list of them:
 + offer an query string and css selecter for taking subscription
 &rarr; print in in png &rarr; output using xdg open or something like
 that  
++ vim-like keybindings  
++ movement, highlight current selection  
 
 ### Syntax
 
