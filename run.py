@@ -203,18 +203,50 @@ if args.interactive:
     # dinamically build choice list from given functions
     # and link to them shortcuts as well dinamically
 
-    choices="    Choose action:\n"
-    choices_list = [
-            f"choose words qty for training ({words_qty} now)",
-            "choose categor(y/ies) which you'd like to train"
-            f" ({category_list} now)",
-            "wether you like to train what you know but not excelently"
-            f" ({improve} now)",
-            "find all translations (desired to improve your lexicon)",
-            "train",
-        ]
-    choices += "\n".join(f"{i}. {text};" for i, text in
-            enumerate(choices_list, start=1))
+
+    def choose_word_qty(event):
+        '''
+        choose words qty for training
+        '''
+        pass
+
+    def choose_category(event):
+        '''
+        choose categor(y/ies) for training
+        '''
+
+        pass
+
+    def set_improve(event):
+        '''
+        enable improve mode (train what you already know but not mastered)
+        '''
+
+        pass
+
+    def train(event):
+        '''
+        start training
+        '''
+
+        pass
+
+    choices_dict = {
+            choose_word_qty: f"choose words qty ({words_qty} now)",
+            choose_category: f"choose categories ({category_list} now)",
+            set_improve:     f"set improve mode ({improve} now)",
+            train:  "start training"
+            }
+
+    choices  = "Choices here:\n"
+    new_dict = {}
+    kb       = KeyBindings()
+    for i, (key, item) in enumerate(choices_dict.items(), start=1):
+        # for each function apply the decorator
+        new_dict[(kb.add(f"{i}"))(key)] = item
+        choices += f"{i}. {item}\n"
+    choice_dict = dict(new_dict)
+
 
     tooltip = [
         "'all' in category list means all existing categories",
@@ -235,7 +267,6 @@ if args.interactive:
         Window(height=1, content=FormattedTextControl(text=help_string))
     ])
 
-    kb = KeyBindings()
 
     @kb.add('q')
     def exit_(event):
