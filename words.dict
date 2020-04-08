@@ -26,13 +26,16 @@ affirmative - утвердительный
 syllable - слог
 stress - ударение
 auxiliary - вспомогательный
-
+# }}}
+# colors{{{
 [Colors]
 tan, beige - бежевый, загарелый
-
+# }}}
+# math{{{
 [Math]
 intersection - пересечение/перекресток
-
+# }}}
+# clothes{{{
 [Clothes]
 belt - пояс
 gloves - перчатки
@@ -47,13 +50,34 @@ jewelry - драгоценности
 neclace - ожерелье
 shoe store - обувной магазин
 sleeve - рукав
-
+seam - шов
+ragged - рваный
+linen - льняное полотно
+# }}}
+# feature{{{
 [Feature]
 wise - мудрый
 kind - добрый
 decent - приличный
 nice - хороший
-
+thirsty - жаждущий
+asleep - спящий
+benevolent - благожелательный
+feisty - злющий
+passionate - пылкий
+prickly - колючий - agressive, not friendly
+neat - аккуратный
+inestimable - неоценимый
+decent - порядочный
+subtle - тонки \ коварный - - subtle issues
+# }}}
+# relax{{{
+[Relax]
+nap - вздремнуть
+vacation - отпуск
+fatigue - усталость
+# }}}
+# human parts{{{
 [Human parts]
 ear - ухо
 eye - глаз
@@ -68,21 +92,33 @@ middle finger - средний палец
 ring finger - безымянный палец
 little finger - мизинец
 toes - пальцы
-
+cavity - полость
+pucker - морщиться
+nostrils - ноздри
+flash - плоть
+neck - шея
+# }}}
+# human disasters{{{
 [Human disasters]
 hiccups - икота
-
+malaise - недомогание
+# }}}
+# react{{{
+[React]
+transfixed - потрясен
+# }}}
+# position{{{
 [Position]
 accountant - бухгалтер
 joggers - бугены
 landlord - арендодатель
 waitress - официантка
-
-[Feelings]
-thirsty - жаждущий
-asleep - спящий
-
-[Engine]
+heir - наследник
+huntsman - охотник
+gentry - дворянство
+# }}}
+# engine{{{
+[Vehicle]
 gasoline - бензин
 motorway - автомагистраль
 motorcar - автомобиль
@@ -97,7 +133,18 @@ valve - клапан
 pistons - поршни
 pressure rings - уплотнительное кольцо
 piston rings - поршневые кольца
-
+vessel - судно
+# }}}
+# state {{{
+[State]
+prone - склонный
+excitement - волнение
+# }}}
+# material {{{
+[Material]
+leaden - свинцовый
+# }}}
+# actions {{{
 [Actions]
 sneezed - чихнуть
 signed - подписал
@@ -123,37 +170,93 @@ indicate - указывать
 ensure - обезспечивать\гарантировать
 exceed - превышать
 withstand - выдерживать
-
+flit - порхать
+hurry - торопиться
+glance - взглянуть
+sire - рожать \ быть производителем
+conquer - покорять
+loom - маячить \ качаться
+permeate - пропитывает
+devote - посвящать (чему-то время)
+fray - изнашиваться
+conceive - зачать
+dwell - обидать
+# }}}
+# form {{{
+[Form]
+squate - приземистый
+distended - растянутый
+sag - прогибаться \ прогиб
+# }}}
+# interaction {{{
+[Interaction]
+inquiry - запрос
+condolences - соболезнования
+gall - желчь
+mock - издеваться
+quarrel - ссора
+treason - измена
+rumors - слухи
+pity - жалость
+oblige - обязать
+vengeance - отмщение
+# }}}
+# quantity {{{
 [Quantity]
 dozen - дюжина
-
-[Nouns]
+# }}}
+# noun{{{
+[Noun]
 guidance - руководство
 luxury - роскошь
 exhaust - истощение
 feature - особенность
 buzzer - звонок
-
+will - твердое намерение
+reflex - рефлекс
+fortitude - сила духа
+deflection - уклонение
+noose - петля
+tug - напряжение сил
+breeze - ветер
+wind - ветер
+perception - восприятие
+awareness - сознание
+surge - волна
+consciousness - сознание
+knot - узел
+devotion - религиозный обряд
+hiss - свист \ шипение
+faith - вера
+kith - знакомые
+rite - обряд
+descent - спуск
+# }}}
+# articles{{{
 [Articles]
 since - поскольку
-
+# }}}
+# adverbs{{{
 [Adverbs]
 direcyly - непосредственно
-
+# }}}
+# adjectives{{{
 [Adjectives]
 prescription - рецепт (на лекарство)
 impassable - непроходимый
-
-[Relax]
-nap - вздремнуть
-vacation - отпуск
-
+thin - тонкий
+crooked - изогнутый
+tightened up - затянуто
+giddy - головокружительный
+# }}}
+# town{{{
 [Town]
 downtown - в центре города
 bench - скамейка
 barbershop - парикмахерская
 jaywalk - неосторожно переходить улицу
-
+# }}}
+# nature{{{
 [Nature]
 bush - куст
 bunch - гроздь \ пучок
@@ -163,13 +266,18 @@ squirrels - белочки
 whale - кит
 yip - тявкать
 humid - влажный
-
+erupt - извергать
+bough - ветвь
+# }}}
+# things{{{
 [Things]
 pencil sharpener - точилка
 tube - тюбик
 suitcases - чемоданы
 nail - гвозь
-
+supplies - предметы снабжения
+# }}}
+# kitchen{{{
 [Kitchen]
 bowl - миска
 pot - горшок
@@ -195,7 +303,8 @@ tray - поднос
 can - банка
 jar - баночка
 chopsticks - палочки для еды
-
+# }}}
+# food{{{
 [Food]
 flour - мука
 strawberry - клубника
