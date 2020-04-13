@@ -26,6 +26,7 @@ affirmative - утвердительный
 syllable - слог
 stress - ударение
 auxiliary - вспомогательный
+yet - но\хотя
 # }}}
 # colors{{{
 [Colors]
@@ -56,6 +57,13 @@ linen - льняное полотно
 # }}}
 # feature{{{
 [Feature]
+desperate - отчаянный
+suspicious - подозрительный
+hostile - враждебный
+gut feeling - интуиция
+scavenger - мусорщик
+quaint - причудливый
+generous - великодушный
 wise - мудрый
 kind - добрый
 decent - приличный
@@ -70,15 +78,25 @@ neat - аккуратный
 inestimable - неоценимый
 decent - порядочный
 subtle - тонки \ коварный - - subtle issues
+preoccupied - озабоченный
+crackpot - ненормальный
+fortitude - стойкость
+wit - остроумный
+notoriety - слава - the state of being famous or well known for some bad quality or deed
 # }}}
 # relax{{{
 [Relax]
 nap - вздремнуть
 vacation - отпуск
 fatigue - усталость
+unwind - расслабиться
 # }}}
 # human parts{{{
 [Human parts]
+rouge - румяна
+cheekbones - скулы
+strand - нитка\прядь
+gums - десны
 ear - ухо
 eye - глаз
 elbow - локоть
@@ -97,6 +115,7 @@ pucker - морщиться
 nostrils - ноздри
 flash - плоть
 neck - шея
+heel - пятка
 # }}}
 # human disasters{{{
 [Human disasters]
@@ -109,6 +128,11 @@ transfixed - потрясен
 # }}}
 # position{{{
 [Position]
+deckhand - палубный матрос
+dissident - диссидент\инакомыслящий
+refugee - беженец
+nobility - знать
+exile - изгнаннико
 accountant - бухгалтер
 joggers - бугены
 landlord - арендодатель
@@ -116,9 +140,11 @@ waitress - официантка
 heir - наследник
 huntsman - охотник
 gentry - дворянство
+tailor - портной
 # }}}
-# engine{{{
+# vehicle {{{
 [Vehicle]
+mast - мачта
 gasoline - бензин
 motorway - автомагистраль
 motorcar - автомобиль
@@ -139,13 +165,33 @@ vessel - судно
 [State]
 prone - склонный
 excitement - волнение
+persuaded - убежденный
+proponent - сторонник
 # }}}
 # material {{{
 [Material]
+powder - порошок
 leaden - свинцовый
 # }}}
 # actions {{{
 [Actions]
+stagger - идти шатаясь
+foresee - предусмотреть
+tarry - медлить
+prospere - процсетать
+flee - бежать из - - flee the jail
+leave - покидать
+scorch - подгорать
+shiver - дрожать
+rub - натирать
+forged - подделать
+cheer up - взбодриться
+pursue - предследовать\заниматься\гнаться за
+harbor - питать/затаить
+emit - излучать
+blaspheme - богохульствовать
+overzelous - переусердствовать
+emphasize - выделить
 sneezed - чихнуть
 signed - подписал
 pat - потрепать
@@ -188,8 +234,19 @@ squate - приземистый
 distended - растянутый
 sag - прогибаться \ прогиб
 # }}}
+# work {{{
+[Work]
+wages - заработная плата
+# }}}
 # interaction {{{
 [Interaction]
+torment - мучить
+rumor - слух
+gossip - сплетни - - if court gossip is to be believed, are few and far between
+chatter - болтовня
+bruise - синяк
+rival - соперник
+acquaintance - знакомство
 inquiry - запрос
 condolences - соболезнования
 gall - желчь
@@ -205,52 +262,10 @@ vengeance - отмщение
 [Quantity]
 dozen - дюжина
 # }}}
-# noun{{{
-[Noun]
-guidance - руководство
-luxury - роскошь
-exhaust - истощение
-feature - особенность
-buzzer - звонок
-will - твердое намерение
-reflex - рефлекс
-fortitude - сила духа
-deflection - уклонение
-noose - петля
-tug - напряжение сил
-breeze - ветер
-wind - ветер
-perception - восприятие
-awareness - сознание
-surge - волна
-consciousness - сознание
-knot - узел
-devotion - религиозный обряд
-hiss - свист \ шипение
-faith - вера
-kith - знакомые
-rite - обряд
-descent - спуск
-# }}}
-# articles{{{
-[Articles]
-since - поскольку
-# }}}
-# adverbs{{{
-[Adverbs]
-direcyly - непосредственно
-# }}}
-# adjectives{{{
-[Adjectives]
-prescription - рецепт (на лекарство)
-impassable - непроходимый
-thin - тонкий
-crooked - изогнутый
-tightened up - затянуто
-giddy - головокружительный
-# }}}
 # town{{{
 [Town]
+embassy - посольство
+toll - пошлина
 downtown - в центре города
 bench - скамейка
 barbershop - парикмахерская
@@ -258,6 +273,13 @@ jaywalk - неосторожно переходить улицу
 # }}}
 # nature{{{
 [Nature]
+flock - стадо
+peacock - павлин
+critter - зверушка
+trickle - струйка
+bead - капля
+shrub - кустарник
+pup - щенок
 bush - куст
 bunch - гроздь \ пучок
 valley - долина
@@ -271,6 +293,7 @@ bough - ветвь
 # }}}
 # things{{{
 [Things]
+grip - рукоятка
 pencil sharpener - точилка
 tube - тюбик
 suitcases - чемоданы
@@ -347,6 +370,17 @@ plumbing - водопровод
 [Preposition of place]
 beside\near - рядом
 far away from - далеко
+inward - внутрь
+# }}}
+# location {{{
+[Location]
+court - суд
+dam - плотина
+inn - гостиница
+frontier - граница
+refuge - убежище
+alcove - ниша
+cesspit - выгребная яма
 # }}}
 # lighing{{{
 [Lighing]
@@ -398,6 +432,7 @@ shave - брить
 # }}}
 # verbs{{{
 [Verbs]
+vouch - поручиться
 absent - отсутствовать
 dangle - свисать
 bloat - раздуваться
@@ -408,12 +443,77 @@ gaze - вглядываться
 hiss out - выходить со свистом
 seeth - кипеть \ бурлить \ пениться
 roil - взбалтывать
+strut - ходить с важным видом
+# }}}
+# articles{{{
+[Articles]
+since - поскольку
+# }}}
+# noun{{{
+[Noun]
+troops - войска
+plea - мольба
+stain - пятно
+kohl - краска для век
+flavor - аромат
+precautions - меры предосторожности
+hazard - опасность
+deity - божество
+seal - печать\изоляция
+corpse - труп
+reservation - оговорка
+sweat - пот
+obsession - одержимость
+deity - божество
+atrocity - жестокость
+grin - усмешка
+stir - суета
+guidance - руководство
+luxury - роскошь
+exhaust - истощение
+feature - особенность
+buzzer - звонок
+will - твердое намерение
+reflex - рефлекс
+fortitude - сила духа
+deflection - уклонение
+noose - петля
+tug - напряжение сил
+breeze - ветер
+wind - ветер
+perception - восприятие
+awareness - сознание
+surge - волна
+consciousness - сознание
+knot - узел
+devotion - религиозный обряд
+hiss - свист \ шипение
+faith - вера
+kith - знакомые
+rite - обряд
+descent - спуск
+aids - вспомогательные средства
 # }}}
 # adverbs{{{
 [Adverbs]
+loose - свободно
+prosperous - процветающий
 fluently - бегло
 limply - безвольно
 rigidly - жестко
+direcyly - непосредственно
+# }}}
+# adjectives{{{
+[Adjectives]
+narrow - узкий
+consecutive - последовательный
+pulpy - сочный
+prescription - рецепт (на лекарство)
+impassable - непроходимый
+thin - тонкий
+crooked - изогнутый
+tightened up - затянуто
+giddy - головокружительный
 # }}}
 # nationalities{{{
 [Nationalities]
@@ -431,6 +531,9 @@ Saudi Arabian
 # }}}
 # phrase{{{
 [Phrase]
+free rein - свобода действий - - you'll have free rein to torment your subjects in the countryside
+give someone an edge - дать кому-то преимущество
+harbor reservations - питать сомнения
 burn that into your brain
 in many respects - во многих отношениях
 to look like - быть похожим
@@ -445,5 +548,8 @@ worn away in patches - стираться в клочья
 ship went down - корабль затонул
 chapter hall - главный зал
 roils and seethes - бурлит и бурлит
+from within - изнутри
+within which - с которым
+piece together - собраться вместе
 # }}}
 [Irregular plural nouns]
