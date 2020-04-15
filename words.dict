@@ -57,6 +57,19 @@ linen - льняное полотно
 # }}}
 # feature{{{
 [Feature]
+indistinct - невнятный
+arrogance - высокомерие
+loathsome - отвратительный
+wealthy - состоятельный
+reckless - опрометчивый
+adamant - неприклонный
+rotund - пухлый
+bald - лысый
+bold - смелый
+generous - смелый
+misbegotten - скверный
+knack - сноровка
+gullible - легковерный
 desperate - отчаянный
 suspicious - подозрительный
 hostile - враждебный
@@ -93,6 +106,10 @@ unwind - расслабиться
 # }}}
 # human parts{{{
 [Human parts]
+spine - хребет
+forehead - лоб
+vitals - жизненно важные органы
+jaw - челюсть
 rouge - румяна
 cheekbones - скулы
 strand - нитка\прядь
@@ -116,9 +133,11 @@ nostrils - ноздри
 flash - плоть
 neck - шея
 heel - пятка
+complexion - цвет лица/вид
 # }}}
 # human disasters{{{
 [Human disasters]
+ailmant - недуг
 hiccups - икота
 malaise - недомогание
 # }}}
@@ -128,6 +147,9 @@ transfixed - потрясен
 # }}}
 # position{{{
 [Position]
+mercenary - наемник
+heathen - язычник
+hermit - отшельник
 deckhand - палубный матрос
 dissident - диссидент\инакомыслящий
 refugee - беженец
@@ -163,6 +185,7 @@ vessel - судно
 # }}}
 # state {{{
 [State]
+fidget - беспокойство
 prone - склонный
 excitement - волнение
 persuaded - убежденный
@@ -175,6 +198,18 @@ leaden - свинцовый
 # }}}
 # actions {{{
 [Actions]
+falter - затормозиться
+shroud - окутать
+burden - обременять
+sweep - подметать
+sprawl - растягиваться
+curl up - свернуться
+huddle - жаться
+retreat - отступать
+beckon - манить
+tear you down - разорвать тебя
+gnaw - грызть
+elude - ускользать
 stagger - идти шатаясь
 foresee - предусмотреть
 tarry - медлить
@@ -221,7 +256,7 @@ hurry - торопиться
 glance - взглянуть
 sire - рожать \ быть производителем
 conquer - покорять
-loom - маячить \ качаться
+loom - маячить \ качаться \ неясно вырисовываться
 permeate - пропитывает
 devote - посвящать (чему-то время)
 fray - изнашиваться
@@ -240,6 +275,10 @@ wages - заработная плата
 # }}}
 # interaction {{{
 [Interaction]
+cue - сигнал
+agitate - волновать
+urge - позыв
+concern - беспокоство
 torment - мучить
 rumor - слух
 gossip - сплетни - - if court gossip is to be believed, are few and far between
@@ -253,10 +292,11 @@ gall - желчь
 mock - издеваться
 quarrel - ссора
 treason - измена
-rumors - слухи
+rumors - слухи - - if rumors are to be believed
 pity - жалость
 oblige - обязать
 vengeance - отмщение
+bear witness - свидетельствовать
 # }}}
 # quantity {{{
 [Quantity]
@@ -264,6 +304,9 @@ dozen - дюжина
 # }}}
 # town{{{
 [Town]
+trellises - подпоры
+cobbled - мощеные
+misery - нищета
 embassy - посольство
 toll - пошлина
 downtown - в центре города
@@ -273,6 +316,8 @@ jaywalk - неосторожно переходить улицу
 # }}}
 # nature{{{
 [Nature]
+crimson - малиновый
+gull - чайка
 flock - стадо
 peacock - павлин
 critter - зверушка
@@ -293,6 +338,7 @@ bough - ветвь
 # }}}
 # things{{{
 [Things]
+lever - рычаг
 grip - рукоятка
 pencil sharpener - точилка
 tube - тюбик
@@ -302,6 +348,7 @@ supplies - предметы снабжения
 # }}}
 # kitchen{{{
 [Kitchen]
+oven - духовка
 bowl - миска
 pot - горшок
 cup - кружка
@@ -374,6 +421,10 @@ inward - внутрь
 # }}}
 # location {{{
 [Location]
+run-down - ветхий
+estate - имение \ поместье
+cemetery - кладбище
+ward - палата
 court - суд
 dam - плотина
 inn - гостиница
@@ -432,6 +483,14 @@ shave - брить
 # }}}
 # verbs{{{
 [Verbs]
+dispense - распределять
+befall - приключиться
+prowl - бродить
+pursed - поджала
+clasp - сжимать
+blaze - полыхать
+tremble - дрожать
+demote - понизить
 vouch - поручиться
 absent - отсутствовать
 dangle - свисать
@@ -451,6 +510,17 @@ since - поскольку
 # }}}
 # noun{{{
 [Noun]
+clutch - сцепление
+coal - уголь
+harvest - урожай
+amusement - развлечение
+despair - отчаяние
+twitch - подергивание
+bulging - выпячивание
+blow - удар
+curl - завиток
+pinprick - булавочный укол - малая неприятность
+caution - осторожность
 troops - войска
 plea - мольба
 stain - пятно
@@ -496,6 +566,7 @@ aids - вспомогательные средства
 # }}}
 # adverbs{{{
 [Adverbs]
+merely - просто - like just; only
 loose - свободно
 prosperous - процветающий
 fluently - бегло
@@ -505,6 +576,13 @@ direcyly - непосредственно
 # }}}
 # adjectives{{{
 [Adjectives]
+mortal - смертный
+hollow - пустой - a hole or depression in somethingо
+inevitable - неизбежный
+apologetic - извиняющийся
+reclusive - затворнический
+ripe - созревший
+urgent - срочный
 narrow - узкий
 consecutive - последовательный
 pulpy - сочный
