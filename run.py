@@ -220,7 +220,6 @@ if args.interactive:
         '''
         choose words qty for training
         '''
-        print("choose_word_qty")
         try:
             words_qty_pseudo[0] = int(input("enter new words_qty (max"
                 " {}): ".format(word_count(db))))
@@ -229,18 +228,27 @@ if args.interactive:
             print("Not correct number")
         pass
 
-    def choose_category():
+    def choose_category(category_list):
         '''
         choose categor(y/ies) for training
         '''
-        print("choose_category")
+        # output list of all existing categories
+        print("\n".join([category.name for category in Category.select()]) + "\nall")
+        # assign TO the list, do not create copy
+        category_list[:] = [entry.strip() for entry in
+            str(input("Enter categories delimited by `;`:")).split(";")]
         pass
 
-    def set_improve():
+    def set_improve(improve_pseudo):
         '''
         enable improve mode (train what you already know but not mastered)
         '''
-        print("set_improve")
+        answ = str(input("Improve mode enabled (Y/n): "))
+        if answ in "n" or answ in "N" or answ in "no":
+            improve_pseudo[0] = False
+        else:
+            improve_pseudo[0] = True
+        print(improve_pseudo)
         pass
 
     def train():
@@ -265,9 +273,12 @@ if args.interactive:
             display_statistics: "display statistics",
             # binding function arguments allow us to call it
             # without arguments
-            functools.partial(choose_word_qty, words_qty): "choose words qty ({words_qty})",
-            functools.partial(choose_category, category_list): "choose categories ({category_list})",
-            functools.partial(set_improve, improve): "set improve mode ({improve})",
+            functools.partial(choose_word_qty, words_qty):
+                "choose words qty ({words_qty[0]})",
+            functools.partial(choose_category, category_list):
+                "choose categories ({category_list})",
+            functools.partial(set_improve, improve): 
+                "set improve mode ({improve[0]})",
             train:              "start training",
             quit:               "quit program"
         }
