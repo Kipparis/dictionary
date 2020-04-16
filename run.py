@@ -159,25 +159,25 @@ def build_statistics(db):
     out += build_statistics_line("words collected",
             str(word_count(db)))
     out += build_statistics_line("general score", str(score(db)))
+    # TODO: maybe use cache here
 
     return out
 
+def build_choices(header, dictionary, after):
+    """
+    prompt will be displayed on separate line above all of the choices
+    then on each line will be enumerated choices
+    after that `after` variable will be appended to output
+    """
+    out = f"{header}\n"
+    for i, (key, item) in enumerate(dictionary.items(), start=1):
+        out += f"{INDENT_STRING}{i}. {item}\n"
+    out += after
+    return out
+
+
 
 if args.interactive:
-
-    # TODO: incapsulate this logic
-    #   there it is here because of testing
-    from prompt_toolkit import Application
-    from prompt_toolkit.key_binding import KeyBindings
-    from prompt_toolkit.buffer import Buffer    # editable buffer
-    from prompt_toolkit.layout.containers import HSplit, VSplit, Window
-    from prompt_toolkit.layout.controls import BufferControl, FormattedTextControl
-    from prompt_toolkit.layout.layout import Layout
-    from prompt_toolkit.application import get_app
-
-    buffer1 = Buffer()  # editable buffer
-
-    statistics_content="Info:\n\n"
     # build statistics from existing database
     # print statistics (maybe using external lib)
     #       last database update -- last dict file update
@@ -187,109 +187,119 @@ if args.interactive:
     #       show progress (people are training easier when see what they
     #           reached)
 
-    statistics_content += build_statistics(db)
-
     # provide possobilities of training
     #       ability to choose max number of words
     #
     #       by category (you must be able to choose several)
     #       by preceding results (train words with less score)
     #
-    words_qty     = DEFAULT_WORDS_QTY
+    choices_header  = "Choose action:"
+
     category_list = DEFAULT_CATEGORY_LIST
-    improve       = DEFAULT_IMPROVE
+    # create list from simple arguments so we can pass
+    # them as reference in functions
+    words_qty     = [DEFAULT_WORDS_QTY]
+    improve       = [DEFAULT_IMPROVE]
 
-    # TODO: next
-    # dinamically build choice list from given functions
-    # and link to them shortcuts as well dinamically
+    def display_statistics():
+        statistics_content="Info:\n\n"
+        statistics_content += build_statistics(db)
+        print(statistics_content)
+        pass
 
+    def display_help():
+        out = f"{choices_header}\n"
+        for i, (key, item) in enumerate(choices_dict.items(), start=1):
+            string = f"{INDENT_STRING}{i}. {item}\n"
+            out += string.format(**globals())
+        out += "\n\nNote:\n" + "\n".join(tooltip)
+        print(out)
+        pass
 
-    def choose_word_qty(event):
+    def choose_word_qty(words_qty_pseudo):
         '''
         choose words qty for training
         '''
+        print("choose_word_qty")
+        try:
+            words_qty_pseudo[0] = int(input("enter new words_qty (max"
+                " {}): ".format(word_count(db))))
+            print(f"set words_qty to {words_qty}")
+        except ValueError:
+            print("Not correct number")
         pass
 
-    def choose_category(event):
+    def choose_category():
         '''
         choose categor(y/ies) for training
         '''
-
+        print("choose_category")
         pass
 
-    def set_improve(event):
+    def set_improve():
         '''
         enable improve mode (train what you already know but not mastered)
         '''
-
+        print("set_improve")
         pass
 
-    def train(event):
+    def train():
         '''
         start training
         '''
-
+        print("train")
         pass
 
+    def quit():
+        print("\nbye :)")
+        db.close() # close connection
+        sys.exit(0)
+        pass
+
+    # to bind arguments to function
+
+    import functools
+
     choices_dict = {
-            choose_word_qty: f"choose words qty ({words_qty} now)",
-            choose_category: f"choose categories ({category_list} now)",
-            set_improve:     f"set improve mode ({improve} now)",
-            train:  "start training"
-            }
-
-    choices  = "Choices here:\n"
-    new_dict = {}
-    kb       = KeyBindings()
-    for i, (key, item) in enumerate(choices_dict.items(), start=1):
-        # for each function apply the decorator
-        new_dict[(kb.add(f"{i}"))(key)] = item
-        choices += f"{i}. {item}\n"
-    choice_dict = dict(new_dict)
-
+            display_help:       "display help",
+            display_statistics: "display statistics",
+            # binding function arguments allow us to call it
+            # without arguments
+            functools.partial(choose_word_qty, words_qty): "choose words qty ({words_qty})",
+            functools.partial(choose_category, category_list): "choose categories ({category_list})",
+            functools.partial(set_improve, improve): "set improve mode ({improve})",
+            train:              "start training",
+            quit:               "quit program"
+        }
 
     tooltip = [
         "'all' in category list means all existing categories",
         "if you have less words then `words_qty` for now to improve,\n"
-        "  then you will be given random wards from choosen `category` to\n"
-        "  train",
+        f"{INDENT_STRING}then you will be given random wards from choosen `category` to\n"
+        f"{INDENT_STRING}train",
         "find all translations - you'll be given native word, and you\n"
-        "  must find all foreign translations",
+        f"{INDENT_STRING}must find all foreign translations",
     ]
-    choices += "\n\nNote:\n" + "\n".join(tooltip)
 
-    help_string="h - help page; q - quit"
+    display_help()
 
-    root_container = HSplit([
-        Window(content=FormattedTextControl(text=statistics_content)),
-        Window(content=FormattedTextControl(text=choices)),
-        Window(height=1, char='-'),
-        Window(height=1, content=FormattedTextControl(text=help_string))
-    ])
+    # build the prompt
+    def build_prompt():
+        rows, columns = os.popen('stty size', 'r').read().split()
+        return "\n"+f"{ACTION_DELIMITER}"*int(columns)+"\n" + \
+            get_env("PS3", DEFAULT_PROMPT)
 
-
-    @kb.add('q')
-    def exit_(event):
-        '''
-        Pressing `q` will exit the user interface
-
-        Return value will be returned from the `Application.run()`
-        '''
-        event.app.exit()
-
-    @kb.add('h')
-    def help_(event):
-        '''
-        Pressing `h` will popup help page
-        '''
-
-    app = Application(
-            layout=Layout(root_container),
-            full_screen=True,
-            key_bindings=kb
-        )
-    app.run()
-
+    # get int from user input (assume that is N)
+    # take N-th entry in `choices_dict`
+    # call function (first element in dict entry)
+    while True:
+        try:
+            list(choices_dict.keys())[int(input(build_prompt()))-1]()
+        except (IndexError, ValueError):
+            print("Enter coorect value in range"
+                    " [1;{}]".format(len(choices_dict)))
+        except (KeyboardInterrupt, EOFError):
+            quit()
 
 # Formalities:
 #
@@ -312,4 +322,3 @@ if args.interactive:
 #   11. X11 capability for configs
 
 
-db.close() # close connection
