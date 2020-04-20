@@ -2,10 +2,10 @@
 
 import os, sys
 from utils.dtypes import StringBool
-from utils.file   import parse_dict
+from utils.file   import *
+from utils.dict import Dictionary
 from utils.env    import get_env
 from utils.settings import *
-from datetime import datetime
 
 import argparse
 
@@ -36,58 +36,14 @@ args = parser.parse_args()
 if len(sys.argv) < 2:
     parser.print_help()
 
-# docs here http://docs.peewee-orm.com/en/latest/peewee/models.html
-from peewee import *
-db = SqliteDatabase(args.db_file)
-
-# add logger
-# import logging
-# logger = logging.getLogger('peewee')
-# logger.addHandler(logging.StreamHandler())
-# logger.setLevel(logging.DEBUG)
-
-# about fields
-# http://docs.peewee-orm.com/en/latest/peewee/models.html#fields
-
-class BaseModel(Model):
-    class Meta:
-        database = db   # this model uses the args.db_file database
-        # change table name, default to name of class
-        # table_name = string
-
-class Category(BaseModel):
-    '''
-    list of existing caterogies
-    '''
-    name = CharField(default="")
-
-
-class Result(BaseModel):
-    '''
-    table storing per-word score
-    '''
-    word = CharField(default="")
-    score = IntegerField(default=0)
-    # default - current date
-    last_modified_date = DateField(default=datetime.now)
-    category = ForeignKeyField(Category, backref="results")
-
-
-# it's good practive to explicitly open the connection
-db.connect()
+words_dict = Dictionary(words_file_name=args.words_file, database_file_name=args.db_file)
 
 # this will create the tables with the appropriate columns, foreign key
 # constaints, etc ...
 # db.create_tables([Result, Category])
 if args.create:
+    words_dict.create()
     print("creating new table\n=================")
-    with db:    # another way of creating tables
-        db.create_tables([Result, Category])
-
-def update_mod_time(db_file):
-    import time, datetime
-    mod_time = time.mktime(datetime.datetime.now().timetuple())
-    os.utime(db_file, (mod_time, mod_time))
 
 # to store models, you can use save() or create()
 
@@ -96,72 +52,8 @@ def update_mod_time(db_file):
 #   create - use db.atomic() wrapper or/and `insert_many`
 # iterate over words in .dict file and uppend them
 if args.update or args.create:
-    previous_header = ""
-    category = None
-    for entry in parse_dict(args.words_file): # must return iterable
-        print(f"GOT THIIS {entry}")
-        # becouse I reassign every variable for every entry
-        # it gonna to be very nice to memory (but opposite to CPU)
-        # for every entry -> store in db
-        if entry.category not in previous_header:   # category is new
-            previous_header = entry.category        # assign category to var
-            # check that category is created, if not -> create
-            category, created = Category.get_or_create(name=previous_header)
-            if not created: print(f"\"{category.name}\" already exists")
-        # date, score applied automatically
-        result, created = Result.get_or_create(word=entry.eng_str, category=category)
-        if not created: print(f"\"{category.name}\":\"{entry.eng_str}\" - already exists")
-    # explicitly call to update mod time, so we will know
-    # that update function already ran
-    update_mod_time(args.db_file)
+    words_dict.update()
 
-def diff_m_time(lhf, rhf):
-    return os.path.getmtime(lhf) - os.path.getmtime(rhf)
-
-def word_count(db):
-    return len(Result.select())
-
-# call Select.iterator() when iterating.
-# with python `sum` functional-style operator
-def score(db):
-    '''
-    returns average of all scores
-    '''
-    ret = 0
-    word_qty = word_count(db)
-
-    return sum(result.score for result in \
-            Result.select().where(Result.score > 0)) / word_qty
-
-def build_statistics_line(header, value):
-    return "{0:<{2}}{1:>{3}}\n".format(
-        header + STATISTICS_DELIMITER,
-        value,
-        STATISTICS_HEADER_LEN,
-        STATISTICS_VALUE_LEN
-    )
-
-def build_statistics(db):
-    '''
-    build statistics from database connection
-
-    output format: "header: value"
-    at the end - help message
-    '''
-    out = ""    # init empty string that we'll return
-    # get last database modification time and substitute
-    # .dict file's last modification time
-    # if value positive - all okay, no update needed
-    # otherwise some changes may not be migrated
-    out += build_statistics_line("db_file", args.db_file)
-    out += build_statistics_line(".db outdated",
-            not bool(diff_m_time(args.db_file, args.words_file) > 0))
-    out += build_statistics_line("words collected",
-            str(word_count(db)))
-    out += build_statistics_line("general score", str(score(db)))
-    # TODO: maybe use cache here
-
-    return out
 
 def build_choices(header, dictionary, after):
     """
@@ -174,7 +66,6 @@ def build_choices(header, dictionary, after):
         out += f"{INDENT_STRING}{i}. {item}\n"
     out += after
     return out
-
 
 
 if args.interactive:
@@ -203,7 +94,7 @@ if args.interactive:
 
     def display_statistics():
         statistics_content="Info:\n\n"
-        statistics_content += build_statistics(db)
+        statistics_content += words_dict.build_statistics()
         print(statistics_content)
         pass
 
@@ -222,7 +113,7 @@ if args.interactive:
         '''
         try:
             words_qty_pseudo[0] = int(input("enter new words_qty (max"
-                " {}): ".format(word_count(db))))
+                " {}): ".format(words_dict.word_count)))
             print(f"set words_qty to {words_qty}")
         except ValueError:
             print("Not correct number")
@@ -233,7 +124,7 @@ if args.interactive:
         choose categor(y/ies) for training
         '''
         # output list of all existing categories
-        print("\n".join([category.name for category in Category.select()]) + "\nall")
+        print("\n".join([category.name for category in words_dict.categories]) + "\nall")
         # assign TO the list, do not create copy
         category_list[:] = [entry.strip() for entry in
             str(input("Enter categories delimited by `;`:")).split(";")]
@@ -258,9 +149,10 @@ if args.interactive:
         print("train")
         pass
 
-    def quit():
+    def quit(words_dict):
         print("\nbye :)")
-        db.close() # close connection
+        # close connection, close descriptors
+        if words_dict: del words_dict
         sys.exit(0)
         pass
 
@@ -277,7 +169,7 @@ if args.interactive:
                 "choose words qty ({words_qty[0]})",
             functools.partial(choose_category, category_list):
                 "choose categories ({category_list})",
-            functools.partial(set_improve, improve): 
+            functools.partial(set_improve, improve):
                 "set improve mode ({improve[0]})",
             train:              "start training",
             quit:               "quit program"
@@ -310,7 +202,9 @@ if args.interactive:
             print("Enter coorect value in range"
                     " [1;{}]".format(len(choices_dict)))
         except (KeyboardInterrupt, EOFError):
-            quit()
+            # have to pass instance explicitly,
+            # otherwise it doesn't see it
+            quit(words_dict)
 
 # Formalities:
 #
