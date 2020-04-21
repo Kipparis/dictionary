@@ -34,6 +34,11 @@ Most noticable list of them:
 that  
 + vim-like keybindings  
 + movement, highlight current selection  
++ save user preferences  
++ hardmode. e.g. foreign description only  
++ word dict as submodule, so everyone may not 
+  update main app but update dictionary  
+    * script for updating either main app or dictonary or both  
 
 ### Syntax
 
