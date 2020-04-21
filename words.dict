@@ -4,6 +4,9 @@
 #
 # foreign word syntax:
 # native word syntax:
+#   \ for different meanings
+#   ; for same meanings
+#   {} to group semantic groups
 # description syntax:
 # usage example:
 #
@@ -38,6 +41,8 @@ intersection - пересечение/перекресток
 # }}}
 # clothes{{{
 [Clothes]
+rag - тряпка
+loose - свободный - not fitting tightly or closely
 belt - пояс
 gloves - перчатки
 skirt - юбка
@@ -57,6 +62,12 @@ linen - льняное полотно
 # }}}
 # feature{{{
 [Feature]
+soggy - нудный
+cautious - осторожный - (of a person) careful to avoid potential problems or dangers
+hesitant - колеблющийся - tentative, unsure, or slow in acting or speaking
+grateful - благодарный
+sincere - душевный - free from pretense or deceit; proceeding from genuine feelings
+ramshackle - полуразвалившийся
 indistinct - невнятный
 arrogance - высокомерие
 loathsome - отвратительный
@@ -106,6 +117,9 @@ unwind - расслабиться
 # }}}
 # human parts{{{
 [Human parts]
+gullet - пищевод
+quip - колкость - a witty remark - Your quips cannot change the truth
+loins - поясница
 spine - хребет
 forehead - лоб
 vitals - жизненно важные органы
@@ -126,7 +140,8 @@ index finger - указательный палец
 middle finger - средний палец
 ring finger - безымянный палец
 little finger - мизинец
-toes - пальцы
+fingers - пальцы на руках
+toes - пальцы на ногах
 cavity - полость
 pucker - морщиться
 nostrils - ноздри
@@ -137,6 +152,7 @@ complexion - цвет лица/вид
 # }}}
 # human disasters{{{
 [Human disasters]
+pox - сифилис
 ailmant - недуг
 hiccups - икота
 malaise - недомогание
@@ -147,6 +163,14 @@ transfixed - потрясен
 # }}}
 # position{{{
 [Position]
+rowdy - дебошир
+duc - герцог
+simpleton - простак
+enlisted - рядовой
+seamstress - швея
+predator - хищник
+patron - покровитель \ заступник
+cuckold - обманутый муж
 mercenary - наемник
 heathen - язычник
 hermit - отшельник
@@ -198,6 +222,14 @@ leaden - свинцовый
 # }}}
 # actions {{{
 [Actions]
+scorn - презирать - the feeling or belief that someone or something is worthless or despicable
+spun - сплел - turn or cause to turn or whirl around quickly - A tale he has spun around himself
+divert - отвлекать
+attend - присутствовать \ заниматься
+animate - оживить
+tame - приручать
+severe - разрезать - divide by cutting or slicing, espceially suddenly and forcibly - Many of the woman's fingers and toes are severed
+acquire - приобретать
 falter - затормозиться
 shroud - окутать
 burden - обременять
@@ -275,6 +307,15 @@ wages - заработная плата
 # }}}
 # interaction {{{
 [Interaction]
+contempt - презрение - the feeling that a person or a thing is beneath consideration, worthless, or deserving scorn
+sneer - насмешка - a contemptuous or mocking smile, remark, or tone
+indulge - баловать \ потакать - allow oneself to enjoy the pleasure of
+frown - осуждать - furrow one's brow in an expression of disapproval, displeasure, or concentration - polite society frowns on your struggles
+discontent - недовольство - lack of contentment; dissatisfaction with one's circumstances
+holler - окликать - give a loud shout or cry - you gimme a holler
+pretense - притворство
+deceit - обман
+quip - колкость - a witty remark - Your quips cannot change the truth
 cue - сигнал
 agitate - волновать
 urge - позыв
@@ -376,6 +417,7 @@ chopsticks - палочки для еды
 # }}}
 # food{{{
 [Food]
+sip - глоток
 flour - мука
 strawberry - клубника
 pepper - перец
@@ -421,6 +463,13 @@ inward - внутрь
 # }}}
 # location {{{
 [Location]
+pitfall - западня
+manor - поместье
+cradle - колыбель
+plateau - плато
+beeline - кратчайший путь
+amidst - среди
+brothel - бордель
 run-down - ветхий
 estate - имение \ поместье
 cemetery - кладбище
@@ -480,9 +529,22 @@ suffices - хватает (на что-то) - Food buyed will suffice for all o
 # hygiene{{{
 [Hygiene]
 shave - брить
+stench - зловоние
 # }}}
 # verbs{{{
 [Verbs]
+emanate - исходить
+hitch - запрягать - move (something) into a different position with a jerk
+extinguish - тушить
+seize - схватить - take hold of suddenly and forcibly
+resemble - напоминать\быть похожим
+dip - погружать - put or let something down quickly or briefly in or into (liquid)
+submerge - погружать - cause to be under water - cause to be under water
+immerse - окунать - dip or submerge in a liquid
+soak - вымачивать - the act of immersing someone or something in liquid for a period of time - The plateau has soaked in the sun.
+blaze - гореть ярко - burn fiercely or brightly
+bar - запирать \ препятствовать - - May the the eternal prison bar your soul from passage
+melt - плавиться
 dispense - распределять
 befall - приключиться
 prowl - бродить
@@ -510,6 +572,39 @@ since - поскольку
 # }}}
 # noun{{{
 [Noun]
+chime - звон - a bell or a metal bar or tube, typically one of a set tuned to produce a melodious series of ringing sounds when struck
+salvage - спасение
+posterity - потомки
+rivalry - соперничество
+sustenence - средства к существованию
+veil - завеса
+labor - труд
+demand - требование \ спрос
+joy - радость - a feeling of great pleasure and happiness
+grasp - хватка - seize and hold firmly
+grip - захват - take and keep a firm hold of; graps tightly
+mist - туман - a cloud of tiny water droplets suspended in the atmosphere at or near the earth's surface limiting visibility, but to a lesser extent than fog; strictly, with visibility remaining above 1.5 miles (1 km)
+saliva - слюна
+slobber - слюни - saliva dripping sopiously from the moth
+dawn - рассвет - (of a day) begin \ become evident to the mind, be perceived or understood
+twilight - сумерки
+dusk - темное время сумерок - the darker stage of twilight
+smudge - пятно
+framework - каркас\основа
+excess - неумеренность - an amount of something that is more than necessary, permitted, or desirable - When no one pays attention to the excesses and debaucheries of a lord, you give them something they can't look aray from.
+debauchery - распущенность - excessive indulgence in sensual pleasures
+struggle - борьба - a forceful or violent effort to get free of restraint or resist attack - polite society frowns on your struggles
+kin - родня
+kith - знакомые
+ruckus - шумиха - a disturbance or commotion
+commotion - волнение \ смятение
+disturbance - волнение \ возмущение
+candor - искренность
+connotation - скрытый смысл - - patronising or dismissive connotation
+ken - кругозор
+redemption - искупление
+passage - прохождение
+wax - воск
 clutch - сцепление
 coal - уголь
 harvest - урожай
@@ -559,13 +654,14 @@ knot - узел
 devotion - религиозный обряд
 hiss - свист \ шипение
 faith - вера
-kith - знакомые
 rite - обряд
 descent - спуск
 aids - вспомогательные средства
 # }}}
 # adverbs{{{
 [Adverbs]
+outwardly - снаружи - of, on, or from the outside
+abruptly - резко
 merely - просто - like just; only
 loose - свободно
 prosperous - процветающий
@@ -576,6 +672,14 @@ direcyly - непосредственно
 # }}}
 # adjectives{{{
 [Adjectives]
+spoile - испорченный
+filthy - отвратительный
+tender - нежно
+evident - очевидный \ явный - plain or obvious; clearly seen or understood
+loose - свободный - not firmly or tightly fixed in place; detached or able to be detached
+caul stripped - обнаженный - stripped soul
+idiomatic - характерный
+guilty - виновный
 mortal - смертный
 hollow - пустой - a hole or depression in somethingо
 inevitable - неизбежный
@@ -609,6 +713,11 @@ Saudi Arabian
 # }}}
 # phrase{{{
 [Phrase]
+But what use is it - но какая польза от этого
+indeed - в самом деле - used to emphasize a statement or response confirming something already suggested \ used to introduce a further and stronge or more surprising point
+without my leave - без моего разрешения - - be cautious what you read in my mind without my leave
+don't have nothing to do with that - не умеет к этому никакого отношения
+off with you - иди - patronising or dismissive connotation, off means away, word order is unusual
 free rein - свобода действий - - you'll have free rein to torment your subjects in the countryside
 give someone an edge - дать кому-то преимущество
 harbor reservations - питать сомнения
