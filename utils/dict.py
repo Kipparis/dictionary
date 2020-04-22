@@ -84,22 +84,19 @@ class Dictionary:
         with open(self.words_file_name, "r") as f:
             header = ""
             for line in f:
-                line = line.strip()
+                # strip and rm comments
+                line = re.sub(r'#.*',"",line).strip()
                 # for each line there are two cases:
                 #       header - assign variable header to it
                 #       entry  - store into yielding value
+                if not line: continue   # if line empty we have nothing to do with it
                 search = re.search(r"\A\[.*\]", line) # pattern for category name
                 if not search or not search.group(0):
-                    # rm comments
-                    line = re.sub(r'#.*\Z',"",line).strip()
-                    # if there still is line => check if it
-                    # contains simple translation
-                    if line:
-                        # build info
-                        word_info = [e.strip() for e in line.split("-")]
-                        while len(word_info) < 4:
-                            word_info.append("")
-                        yield Word(header, *word_info)
+                    word_info = [e.strip() for e in line.split("-")]
+                    while len(word_info) < 4:
+                        word_info.append("")
+                    # return structure Word
+                    yield Word(header, *word_info)
                 # if "header pattern" has matched
                 #   store new header value
                 elif search and search.group(0):
