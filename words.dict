@@ -739,4 +739,145 @@ from within - изнутри
 within which - с которым
 piece together - собраться вместе
 # }}}
-[Irregular plural nouns]
+# verbs following verbs {{{ %custom verbs following verbs
+# g - verb must be followed by gerund
+# i - verb must be followed by infinitive
+# gi - either gerund or infinitive
+# abhor - g
+# acknowledge - g
+# admit - g
+# advise - g
+# allow - g
+# anticipate - g
+# appreciat - ge
+# avoid - g
+# be worth - g
+# can’t help - g
+# celebrate - g
+# confess - g
+# consider - g
+# defend - g
+# delay - g
+# detest - g
+# discontinue - g
+# discuss - g
+# dislike - g
+# dispute - g
+# dread - g
+# endure - g
+# enjoy - g
+# escape - g
+# evade - g
+# explain - g
+# fancy - g
+# fear - g
+# feel like - g
+# feign - g
+# finish - g
+# forgive - g
+# give up (stop) - g
+# keep (continue) - g
+# keep on - g
+# mention - g
+# mind (object to) - g
+# miss - g
+# necessitate - g
+# omit - g
+# permit - g
+# picture - g
+# postpone - g
+# practice - g
+# prevent - g
+# put off - g
+# recall - g
+# recollect - g
+# recommend - g
+# report - g
+# resent - g
+# resist - g
+# resume - g
+# risk - g
+# shirk - g
+# shun - g
+# suggest - g
+# support - g
+# tolerate - g
+# understand - g
+# urge - g
+# warrant - g
+# agree - i
+# appear - i
+# arrange - i
+# ask - i
+# attempt - i
+# beg - i
+# can/can’t afford - i
+# can/can’t wait - i
+# care - i
+# chance - i
+# choose - i
+# claim - i
+# come - i
+# consent - i
+# dare - i
+# decide - i
+# demand - i
+# deserve - i
+# determine - i
+# elect - i
+# endeavor - i
+# expect - i
+# fail - i
+# get - i
+# grow (up) - i
+# guarantee - i
+# hesitate - i
+# hope - i
+# hurry - i
+# incline - i
+# learn - i
+# manage - i
+# mean - i
+# need - i
+# neglect - i
+# offer - i
+# pay - i
+# plan - i
+# prepare - i
+# pretend - i
+# profess - i
+# promise - i
+# prove - i
+# refuse - i
+# remain - i
+# request - i
+# resolve - i
+# say - i
+# seek - i
+# seem - i
+# shudder - i
+# strive - i
+# struggle - i
+# swear - i
+# tend - i
+# threaten - i
+# turn out - i
+# venture - i
+# volunteer - i
+# wait - i
+# want - i
+# wish - i
+# would like - i
+# yearn - i
+# begin - gi
+# can’t bear - gi
+# can’t stand - gi
+# continu - gie
+# hate - gi
+# like - gi
+# love - gi
+# prefer - gi
+# propose - gi
+# start - gi
+# %endcustom
+# }}}
