@@ -6,6 +6,7 @@ from utils.file   import *
 from utils.dict import Dictionary
 from utils.env    import get_env
 from utils.settings import *
+from utils.train import *
 
 import argparse
 
@@ -146,7 +147,7 @@ if args.interactive:
         '''
         start training
         '''
-        print("train")
+        start_train(words_dict, words_qty, category_list, improve)
         pass
 
     def quit(words_dict):
@@ -171,8 +172,8 @@ if args.interactive:
                 "choose categories ({category_list})",
             functools.partial(set_improve, improve):
                 "set improve mode ({improve[0]})",
-            train:              "start training",
-            quit:               "quit program"
+            train:  "start training",
+            quit:   "quit program"
         }
 
     tooltip = [
@@ -198,9 +199,9 @@ if args.interactive:
     while True:
         try:
             list(choices_dict.keys())[int(input(build_prompt()))-1]()
-        except (IndexError, ValueError):
-            print("Enter coorect value in range"
-                    " [1;{}]".format(len(choices_dict)))
+        # except (IndexError, ValueError):
+        #     print("Enter coorect value in range"
+        #             " [1;{}]".format(len(choices_dict)))
         except (KeyboardInterrupt, EOFError):
             # have to pass instance explicitly,
             # otherwise it doesn't see it

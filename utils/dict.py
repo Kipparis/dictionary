@@ -8,16 +8,17 @@ from .settings import * # configuration
 from peewee import *    # database handling
 
 Word = namedtuple('Word', ['category', 'eng_str','ru_str',
-    'description', 'clarification'])
+    'description', 'example'])
 
 # docs here http://docs.peewee-orm.com/en/latest/peewee/models.html
 
-def build_statistics_line(header, value):
+def build_statistics_line(header, value,
+        header_len=STATISTICS_HEADER_LEN, value_len=STATISTICS_VALUE_LEN):
     return "{0:<{2}}{1:>{3}}\n".format(
         header + STATISTICS_DELIMITER,
         value,
-        STATISTICS_HEADER_LEN,
-        STATISTICS_VALUE_LEN
+        header_len,
+        value_len
     )
 
 
@@ -25,7 +26,14 @@ class Dictionary:
     """
     shortcuts to database queries + all data related functions
     """
-    __slots__ = ("words_file_name", "db_file_name", "word_dict", "db", "Category_model", "Result_model")
+    __slots__ = (
+            "words_file_name",
+            "db_file_name",
+            "word_dict",
+            "db",
+            "Category_model",
+            "Result_model"
+        )
 
     def __init__(self, words_file_name="", database_file_name=""):
         self.words_file_name = words_file_name  # store inited filename
@@ -40,6 +48,8 @@ class Dictionary:
         self.db = SqliteDatabase(database_file_name)
         # it's good practive to explicitly open the connection
         self.db.connect()
+        # TODO: after each init check for last modified date
+        # and decrease score
 
         # about fields
         # http://docs.peewee-orm.com/en/latest/peewee/models.html#fields
@@ -60,14 +70,17 @@ class Dictionary:
             '''
             table storing per-word score
             '''
-            word = CharField(default="")
+            word        = CharField(default="")
+            native      = CharField(default="")
+            description = CharField(default="")
+            example     = CharField(default="")
             score = IntegerField(default=0)
             # default - current date
             last_modified_date = DateField(default=datetime.now)
             category = ForeignKeyField(Category, backref="results")
 
-        self.Category_model = Category()
-        self.Result_model   = Result()
+        self.Category_model = Category
+        self.Result_model   = Result
 
     def __str__(self):
         return "hola"
@@ -122,7 +135,12 @@ class Dictionary:
                 category, created = self.Category_model.get_or_create(name=previous_header)
                 if not created: print(f"\"{category.name}\" already exists")
             # date, score fields applied automatically
-            result, created = self.Result_model.get_or_create(word=entry.eng_str, category=category)
+            result, created = self.Result_model.get_or_create(
+                    word=entry.eng_str,
+                    native=entry.ru_str,
+                    description=entry.description,
+                    example=entry.example,
+                    category=category)
             if not created: print(f"\"{category.name}\":\"{entry.eng_str}\" - already exists")
         # explicitly call to update mod time, so we will know
         # when database syncronized with words.dict file
@@ -132,6 +150,20 @@ class Dictionary:
     @property
     def categories(self):
         return self.Category_model.select()
+
+    @property
+    def words(self):
+        """
+        fetch all words
+        """
+        return self.Result_model.select()
+
+    def words_by_category(self, category):
+        """
+        fetch words by category
+        """
+        # query = Tweet.select().join(User).where(User.username == 'huey')
+        return(self.Result_model.select().join(self.Category_model).where(self.Category_model.name == category))
 
 
     @property
@@ -150,6 +182,16 @@ class Dictionary:
 
         return sum(result.score for result in \
                 self.Result_model.select().where(self.Result_model.score > 0)) / word_qty
+
+    def get_common(self, word):
+        """
+        return word list each having same `native` translation as passed argument
+        """
+        return(self.Result_model
+                .select()
+                .where(self.Result_model.native == word.native))
+        pass
+
 
     def build_statistics(self):
         '''
@@ -171,3 +213,28 @@ class Dictionary:
 
         return out
 
+    def set_score(self, word_entry, new_score):
+        res = (self.Result_model
+                .update(score=new_score)
+                .where(self.Result_model.word == word_entry.word)
+                .execute())
+
+    def get_words_for_training(self, w_qty, category_list, improve):
+        words = []
+        # first get query for categories
+        if "all" in category_list:
+            words = self.words
+        else:
+            words=(self.Result_model.select()
+                .join(self.Category_model)
+                .where(self.Category_model.name.in_(category_list)))
+
+        # then choose words depending on improve rules
+        if improve:
+            # get less unswered words
+            words = words.order_by(self.Result_model.score)
+        print("(get_words_for_training) Words len: {}".format(len(words)))
+        # then slice word qty
+        # words = words.limit(w_qty).namedtuples()
+        words = words.limit(w_qty)
+        return words
