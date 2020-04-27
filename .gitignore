@@ -1,3 +1,5 @@
+local/
+
 # database ignore
 *.db
 
