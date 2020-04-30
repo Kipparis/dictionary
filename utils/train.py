@@ -22,8 +22,7 @@ def start_train(words_dict, words_qty_pseudo, category_list, improve_pseudo):
         translations = words_dict.get_common(word)
 
         # output info to user
-        print("Num translations: {}".format(len(translations)))
-        print("Enter translations for: '{}'".format(word.native))
+        print("Enter translations for: '{}' ({})".format(word.native, len(translations)))
 
         # take user input
         user_transl = str(input())
