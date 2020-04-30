@@ -7,6 +7,7 @@ from utils.dict import Dictionary
 from utils.env    import get_env
 from utils.settings import *
 from utils.train import *
+from utils.io import *
 
 import argparse
 
@@ -187,11 +188,6 @@ if args.interactive:
 
     display_help()
 
-    # build the prompt
-    def build_prompt():
-        rows, columns = os.popen('stty size', 'r').read().split()
-        return "\n"+f"{ACTION_DELIMITER}"*int(columns)+"\n" + \
-            get_env("PS3", DEFAULT_PROMPT)
 
     # get int from user input (assume that is N)
     # take N-th entry in `choices_dict`
