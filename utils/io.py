@@ -19,3 +19,14 @@ def prompt():
 def build_prompt():
     rows, columns = terminal_deminsions()
     return "\n"+linewise_line()+"\n" + prompt()
+
+def build_kv_line(header, value,
+        header_len=KV_HEADER_LEN,
+        value_len=KV_VALUE_LEN,
+        delimiter=KV_DELIMITER):
+    return "{0:<{2}}{1:>{3}}\n".format(
+        header + delimiter,
+        value,
+        header_len,
+        value_len
+    )

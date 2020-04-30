@@ -4,9 +4,9 @@ def start_train(words_dict, words_qty_pseudo, category_list, improve_pseudo):
     w_qty = words_qty_pseudo[0]
     improve = improve_pseudo[0]
     print("selected options:")
-    print(build_statistics_line("words_qty", w_qty)
-        + build_statistics_line("category_list", ",".join(category_list))
-        + build_statistics_line("improve mode", improve))
+    print(build_kv_line("words_qty", w_qty)
+        + build_kv_line("category_list", ",".join(category_list))
+        + build_kv_line("improve mode", improve))
 
     # get words depending on choise
     words = words_dict.get_words_for_training(w_qty, category_list, improve)
@@ -25,9 +25,11 @@ def start_train(words_dict, words_qty_pseudo, category_list, improve_pseudo):
         print("Enter translations for: '{}' ({})".format(word.native, len(translations)))
 
         # take user input
-        user_transl = str(input())
+        user_input = str(input())
         # TODO: allow user to see definitions and categories of available
         # translations
+
+        user_transl = user_input
 
         # words that user answered
         answered_words = [ans.strip() for ans in user_transl.split(";")]
@@ -55,7 +57,7 @@ def start_train(words_dict, words_qty_pseudo, category_list, improve_pseudo):
     print("Correct words are")
     to_print=""
     for entry in wrong_words:
-        to_print+=build_statistics_line(entry[0], entry[-1])
+        to_print+=build_kv_line(entry[0], entry[-1])
     print(to_print)
 
 

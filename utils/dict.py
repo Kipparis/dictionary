@@ -5,6 +5,7 @@ from collections import namedtuple
 
 from .file import *     # file manipulations
 from .settings import * # configuration
+from .io import *       # easy input/output
 from peewee import *    # database handling
 
 Word = namedtuple('Word', ['category', 'eng_str','ru_str',
@@ -12,14 +13,6 @@ Word = namedtuple('Word', ['category', 'eng_str','ru_str',
 
 # docs here http://docs.peewee-orm.com/en/latest/peewee/models.html
 
-def build_statistics_line(header, value,
-        header_len=STATISTICS_HEADER_LEN, value_len=STATISTICS_VALUE_LEN):
-    return "{0:<{2}}{1:>{3}}\n".format(
-        header + STATISTICS_DELIMITER,
-        value,
-        header_len,
-        value_len
-    )
 
 
 class Dictionary:
@@ -205,11 +198,11 @@ class Dictionary:
         # .dict file's last modification time
         # if value positive - all okay, no update needed
         # otherwise some changes may not be migrated
-        out += build_statistics_line("db_file", self.db_file_name)
-        out += build_statistics_line(".db outdated",
+        out += build_kv_line("db_file", self.db_file_name)
+        out += build_kv_line(".db outdated",
                 not bool(diff_m_time(self.db_file_name, self.words_file_name) > 0))
-        out += build_statistics_line("words collected", str(self.word_count))
-        out += build_statistics_line("general score", str(self.score))
+        out += build_kv_line("words collected", str(self.word_count))
+        out += build_kv_line("general score", str(self.score))
 
         return out
 
