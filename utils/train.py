@@ -1,4 +1,5 @@
 from .dict import *
+from .extracter import *
 
 def start_train(words_dict, words_qty_pseudo, category_list, improve_pseudo):
     w_qty = words_qty_pseudo[0]
@@ -12,6 +13,8 @@ def start_train(words_dict, words_qty_pseudo, category_list, improve_pseudo):
     words = words_dict.get_words_for_training(w_qty, category_list, improve)
     print("len(words): {}".format(len(words)))
     print("separate multiple entries by ';'")
+    print("enter 'p' to play pronounciation")
+    print("enter 't' to see transciption")
     print("\n")
 
     wrong_words = []
@@ -26,8 +29,12 @@ def start_train(words_dict, words_qty_pseudo, category_list, improve_pseudo):
 
         # take user input
         user_input = str(input())
-        # TODO: allow user to see definitions and categories of available
-        # translations
+        while user_input in "p" or user_input in "t":
+            if user_input in "p":
+                play_sound(get_word_pronounciation(word.word))
+            elif user_input in "t":
+                display_picture(get_word_transcription(word.word))
+            user_input = str(input())
 
         user_transl = user_input
 

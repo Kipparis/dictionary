@@ -30,3 +30,13 @@ def build_kv_line(header, value,
         header_len,
         value_len
     )
+
+def play_sound(fn):
+    if fn not in "":
+        os.system("play -q " + fn)
+        os.remove(fn)
+
+def display_picture(fn):
+    if fn not in "":
+        os.system("feh --geometry={}x{} ".format(*TRANSCRIPTION_PICTURE_DIMENSIONS) + fn)
+        os.remove(fn)

@@ -17,3 +17,9 @@ DEFAULT_PROMPT = "enter action number: "
 # single character (will be multiplied 10 times)
 # It is used for delimiting actions in output
 ACTION_DELIMITER = "-"
+
+PRONOUNCIATION_REQUEST_STRING = "https://ssl.gstatic.com/dictionary/static/sounds/oxford/{}--_us_1.mp3"
+
+TRANSCRIPTION_REQUEST_STRING = "https://wooordhunt.ru/word/{}"
+# TODO: calculate this from screen dimensions
+TRANSCRIPTION_PICTURE_DIMENSIONS = [600, 100]
