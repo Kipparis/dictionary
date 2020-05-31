@@ -32,11 +32,19 @@ parser.add_argument("-u", "--update", help="update words in database",
 parser.add_argument("-i", "--interactive", help="run program in"
                                 " interactive mode",
                                 action="store_true", default=False)
+parser.add_argument("-f", "--test_features", help="test features"
+        " available in the progam. This option might help you correct"
+        " settings file", action="store_true", default=False)
 
 args = parser.parse_args()
 
 if len(sys.argv) < 2:
     parser.print_help()
+
+# run test_features if user selected option
+if args.test_features:
+    from utils.test import visual_test
+    visual_test()
 
 words_dict = Dictionary(words_file_name=args.words_file, database_file_name=args.db_file)
 

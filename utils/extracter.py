@@ -10,6 +10,7 @@ def get_word_pronounciation(word):
     input:  word to search pronounciation for
     return: filename to mp3 file
     """
+    # TODO: case where there are several words
     fn=f"{word}.mp3"
 
     base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,12 +28,16 @@ def get_word_pronounciation(word):
 
     return(path)
 
-def get_word_transcription(word):
+def get_word_transcription(word,
+        show_text=TRANSCRIPTION_SHOW_TEXT,
+        show_picture=TRANSCRIPTION_SHOW_PICTURE):
     """
     input:  word to search transcription for
     return: filename to jpeg file
     """
+    # TODO: case where there are several words
 
+    fn = ""
     transcription=""
 
     # get html page
@@ -44,14 +49,19 @@ def get_word_transcription(word):
     soup = BeautifulSoup(html_page, 'html.parser')
     translation = soup.find(id='us_tr_sound').span.text
 
-    from PIL import Image, ImageDraw, ImageFont
-    fn="{}.jpg".format(word)
-    # img = Image.new('RGB', (100, 30), color = (73, 109, 137))
-    img = Image.new('RGB', TRANSCRIPTION_PICTURE_DIMENSIONS, color = (0, 0, 0))
-    # fnt = ImageFont.truetype('/Library/Fonts/Arial.ttf', 15)
-    fnt = ImageFont.truetype('/usr/share/fonts/adobe-source-code-pro/SourceCodePro-Regular.otf', 17)
-    d = ImageDraw.Draw(img)
-    d.text((10,10), word + translation, font=fnt, fill=(255,255,255))
-    img.save(fn)
+    if show_text:
+        print(translation)
+
+    if show_picture:
+        from PIL import Image, ImageDraw, ImageFont
+        fn="{}.jpg".format(word)
+        # img = Image.new('RGB', (100, 30), color = (73, 109, 137))
+        img = Image.new('RGB', TRANSCRIPTION_PICTURE_DIMENSIONS, color = (0, 0, 0))
+        # fnt = ImageFont.truetype('/Library/Fonts/Arial.ttf', 15)
+        fnt = ImageFont.truetype('/usr/share/fonts/adobe-source-code-pro/SourceCodePro-Regular.otf', 17)
+        d = ImageDraw.Draw(img)
+        d.text((10,10), word + translation, font=fnt, fill=(255,255,255))
+        img.save(fn)
+
 
     return(fn)
