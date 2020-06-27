@@ -28,40 +28,21 @@ def get_word_pronounciation(word):
 
     return(path)
 
-def get_word_transcription(word,
-        show_text=TRANSCRIPTION_SHOW_TEXT,
-        show_picture=TRANSCRIPTION_SHOW_PICTURE):
+def get_word_transcription(phrase):
     """
-    input:  word to search transcription for
+    input:  phrase to search transcription for
     return: filename to jpeg file
     """
-    # TODO: case where there are several words
-
-    fn = ""
-    transcription=""
-
-    # get html page
-    fp = urllib.request.urlopen(TRANSCRIPTION_REQUEST_STRING.format(word))
-    html_page = fp.read().decode("utf8")
-    fp.close()
-
     from bs4 import BeautifulSoup
-    soup = BeautifulSoup(html_page, 'html.parser')
-    translation = soup.find(id='us_tr_sound').span.text
 
-    if show_text:
-        print(translation)
+    translations = []
+    for word in phrase.split(" "):
+        # get html page
+        fp = urllib.request.urlopen(TRANSCRIPTION_REQUEST_STRING.format(word))
+        html_page = fp.read().decode("utf8")
+        fp.close()
 
-    if show_picture:
-        from PIL import Image, ImageDraw, ImageFont
-        fn="{}.jpg".format(word)
-        # img = Image.new('RGB', (100, 30), color = (73, 109, 137))
-        img = Image.new('RGB', TRANSCRIPTION_PICTURE_DIMENSIONS, color = (0, 0, 0))
-        # fnt = ImageFont.truetype('/Library/Fonts/Arial.ttf', 15)
-        fnt = ImageFont.truetype('/usr/share/fonts/adobe-source-code-pro/SourceCodePro-Regular.otf', 17)
-        d = ImageDraw.Draw(img)
-        d.text((10,10), word + translation, font=fnt, fill=(255,255,255))
-        img.save(fn)
+        soup = BeautifulSoup(html_page, 'html.parser')
+        translations.append(soup.find(id='us_tr_sound').span.text[2:-1])
 
-
-    return(fn)
+    return(" ".join(translations))

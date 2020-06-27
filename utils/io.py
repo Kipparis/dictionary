@@ -36,7 +36,26 @@ def play_sound(fn):
         os.system("play -q " + fn)
         os.remove(fn)
 
-def display_picture(fn):
+def display_picture(translation,
+        show_text=TRANSCRIPTION_SHOW_TEXT,
+        show_picture=TRANSCRIPTION_SHOW_PICTURE):
+
+    if show_text:
+        print(translation)
+
+    fn = ""
+    if show_picture:
+        fn = "word.jpg"
+        from PIL import Image, ImageDraw, ImageFont
+        # img = Image.new('RGB', (100, 30), color = (73, 109, 137))
+        img = Image.new('RGB', TRANSCRIPTION_PICTURE_DIMENSIONS, color = (0, 0, 0))
+        # fnt = ImageFont.truetype('/Library/Fonts/Arial.ttf', 15)
+        fnt = ImageFont.truetype('/usr/share/fonts/adobe-source-code-pro/SourceCodePro-Regular.otf', 17)
+        d = ImageDraw.Draw(img)
+        d.text((10,10), translation, font=fnt, fill=(255,255,255))
+        img.save(fn)
+
     if fn not in "":
         os.system("feh --geometry={}x{} ".format(*TRANSCRIPTION_PICTURE_DIMENSIONS) + fn)
         os.remove(fn)
+

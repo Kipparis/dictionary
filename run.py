@@ -33,8 +33,10 @@ parser.add_argument("-i", "--interactive", help="run program in"
                                 " interactive mode",
                                 action="store_true", default=False)
 parser.add_argument("-f", "--test_features", help="test features"
-        " available in the progam. This option might help you correct"
-        " settings file", action="store_true", default=False)
+                                " available in the progam. This option might help you correct"
+                                " settings file", action="store_true", default=False)
+parser.add_argument("-t", "--transcription", help="get transcription for specified string",
+                                type=str, metavar="phrase/word")
 
 args = parser.parse_args()
 
@@ -45,6 +47,9 @@ if len(sys.argv) < 2:
 if args.test_features:
     from utils.test import visual_test
     visual_test()
+
+if args.transcription:
+    display_picture(get_word_transcription(args.transcription))
 
 words_dict = Dictionary(words_file_name=args.words_file, database_file_name=args.db_file)
 
@@ -159,10 +164,8 @@ if args.interactive:
         start_train(words_dict, words_qty, category_list, improve)
         pass
 
-    def quit(words_dict):
+    def quit():
         print("\nbye :)")
-        # close connection, close descriptors
-        if words_dict: del words_dict
         sys.exit(0)
         pass
 

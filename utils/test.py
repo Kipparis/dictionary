@@ -12,7 +12,7 @@ def visual_test():
     # test picture displaying
     # TRANSCRIPTION_SHOW_TEXT = False
     # TRANSCRIPTION_SHOW_PICTURE = True
-    display_picture(get_word_transcription(word, False, True))
+    display_picture(get_word_transcription(word), False, True)
     ans = input("Does picture displayed correctly? (y/n)")
     if ans not in "y":
         print("You should set TRANSCRIPTION_SHOW_PICTURE to false or make an issue")
@@ -20,7 +20,7 @@ def visual_test():
     # test transcription in terminal
     # TRANSCRIPTION_SHOW_TEXT = True
     # TRANSCRIPTION_SHOW_PICTURE = False
-    display_picture(get_word_transcription(word, True, False))
+    display_picture(get_word_transcription(word), True, False)
     ans = input("Does text displayed correctly?")
     if ans not in "y":
         print("You should set TRANSCRIPTION_SHOW_TEXT to false or make an issue")

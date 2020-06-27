@@ -7,13 +7,12 @@ from .file import *     # file manipulations
 from .settings import * # configuration
 from .io import *       # easy input/output
 from peewee import *    # database handling
+from .models import Category, Result
 
 Word = namedtuple('Word', ['category', 'eng_str','ru_str',
     'description', 'example'])
 
 # docs here http://docs.peewee-orm.com/en/latest/peewee/models.html
-
-
 
 class Dictionary:
     """
@@ -29,8 +28,8 @@ class Dictionary:
         )
 
     def __init__(self, words_file_name="", database_file_name=""):
-        self.words_file_name = words_file_name  # store inited filename
-        self.db_file_name = database_file_name    # database file (e.g. .db extension)
+        self.words_file_name = words_file_name      # store inited filename
+        self.db_file_name = database_file_name      # database file (e.g. .db extension)
         self.word_dict = {}         # dictionary containing words from file
 
         # add logger
@@ -39,38 +38,11 @@ class Dictionary:
         # logger.addHandler(logging.StreamHandler())
         # logger.setLevel(logging.DEBUG)
         self.db = SqliteDatabase(database_file_name)
-        # it's good practive to explicitly open the connection
         self.db.connect()
+        # it's good practive to explicitly open the connection
+        self.db.bind([Category, Result])
         # TODO: after each init check for last modified date
         # and decrease score
-
-        # about fields
-        # http://docs.peewee-orm.com/en/latest/peewee/models.html#fields
-        class BaseModel(Model):
-            class Meta:
-                database = self.db   # this model uses the args.db_file database
-                # change table name, default to name of class
-                # table_name = string
-
-        class Category(BaseModel):
-            '''
-            list of existing caterogies
-            '''
-            name = CharField(default="")
-
-
-        class Result(BaseModel):
-            '''
-            table storing per-word score
-            '''
-            word        = CharField(default="")
-            native      = CharField(default="")
-            description = CharField(default="")
-            example     = CharField(default="")
-            score = IntegerField(default=0)
-            # default - current date
-            last_modified_date = DateField(default=datetime.now)
-            category = ForeignKeyField(Category, backref="results")
 
         self.Category_model = Category
         self.Result_model   = Result
