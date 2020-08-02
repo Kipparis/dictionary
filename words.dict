@@ -42,7 +42,6 @@ intersection - пересечение/перекресток
 # clothes{{{
 [Clothes]
 rag - тряпка
-loose - свободный - not fitting tightly or closely
 belt - пояс
 gloves - перчатки
 skirt - юбка
@@ -62,6 +61,14 @@ linen - льняное полотно
 # }}}
 # feature{{{
 [Feature]
+malignant - злостный - malevolent
+wrinkled - морщинистый - having wrirnkles or slight folds
+fabulous - невероятный - extraordinary, especially extraordinarily large
+desirous - жаждующий - having or characterized by desire
+piety - благочестие - the quality of being religious or reverent
+bonkers - помешанный - mad; crazy
+treacherous - коварный - guilty of or involving betrayal or deception
+frantic - неистовый (в плане волнения) - wild or distraught with fear, anxiety, or other emotion
 soggy - нудный
 cautious - осторожный - (of a person) careful to avoid potential problems or dangers
 hesitant - колеблющийся - tentative, unsure, or slow in acting or speaking
@@ -70,15 +77,15 @@ sincere - душевный - free from pretense or deceit; proceeding from genui
 ramshackle - полуразвалившийся
 indistinct - невнятный
 arrogance - высокомерие
-loathsome - отвратительный
+loathsome - отвратительный - causing hatred or disgust; repulsive
 wealthy - состоятельный
 reckless - опрометчивый
 adamant - неприклонный
 rotund - пухлый
 bald - лысый
-bold - смелый
-generous - смелый
-misbegotten - скверный
+bold - смелый - showing an ability to take risks; confident and courageous
+generous - великодушный - showing a readiness to give more of something, as money or time, than is strictly necessary or expected.
+misbegotten - скверный - badly conceived, deigned, or planned
 knack - сноровка
 gullible - легковерный
 desperate - отчаянный
@@ -87,7 +94,6 @@ hostile - враждебный
 gut feeling - интуиция
 scavenger - мусорщик
 quaint - причудливый
-generous - великодушный
 wise - мудрый
 kind - добрый
 decent - приличный
@@ -98,10 +104,10 @@ benevolent - благожелательный
 feisty - злющий
 passionate - пылкий
 prickly - колючий - agressive, not friendly
-neat - аккуратный
+neat - аккуратный - (of a place or thing) arranged in an orderly, tidy way; done with or demostrating skill or efficiency
 inestimable - неоценимый
 decent - порядочный
-subtle - тонки \ коварный - - subtle issues
+subtle - тонкий \ коварный - - subtle issues
 preoccupied - озабоченный
 crackpot - ненормальный
 fortitude - стойкость
@@ -117,11 +123,14 @@ unwind - расслабиться
 # }}}
 # human parts{{{
 [Human parts]
+lap - колени
+wrinkle - морщина
+cheek - щека - either side of the face below the eye
 gullet - пищевод
-quip - колкость - a witty remark - Your quips cannot change the truth
 loins - поясница
 spine - хребет
 forehead - лоб
+brow - лоб / чело
 vitals - жизненно важные органы
 jaw - челюсть
 rouge - румяна
@@ -159,10 +168,11 @@ malaise - недомогание
 # }}}
 # react{{{
 [React]
-transfixed - потрясен
+transfixed - потрясен(в шоке)
 # }}}
 # position{{{
 [Position]
+nerd - ботан - a foolish or contemptible person who lacks social skills or is boringly studious
 rowdy - дебошир
 duc - герцог
 simpleton - простак
@@ -178,9 +188,9 @@ deckhand - палубный матрос
 dissident - диссидент\инакомыслящий
 refugee - беженец
 nobility - знать
-exile - изгнаннико
+exile - изгнанник
 accountant - бухгалтер
-joggers - бугены
+joggers - бегуны
 landlord - арендодатель
 waitress - официантка
 heir - наследник
@@ -210,6 +220,7 @@ vessel - судно
 # state {{{
 [State]
 fidget - беспокойство
+convern - беспокойство - worry (someone); make anxious
 prone - склонный
 excitement - волнение
 persuaded - убежденный
@@ -221,7 +232,10 @@ powder - порошок
 leaden - свинцовый
 # }}}
 # actions {{{
-[Actions]
+[Action]
+hurl - швырять - throw (an object) with great force
+fall into - делиться - - All git configuration options fall into two categories
+wonder - интересоваться - desire or be curious to know something
 scorn - презирать - the feeling or belief that someone or something is worthless or despicable
 spun - сплел - turn or cause to turn or whirl around quickly - A tale he has spun around himself
 divert - отвлекать
@@ -229,7 +243,7 @@ attend - присутствовать \ заниматься
 animate - оживить
 tame - приручать
 severe - разрезать - divide by cutting or slicing, espceially suddenly and forcibly - Many of the woman's fingers and toes are severed
-acquire - приобретать
+acquire - приобретать - buy or obtain (an asset or object) for oneself
 falter - затормозиться
 shroud - окутать
 burden - обременять
@@ -307,6 +321,9 @@ wages - заработная плата
 # }}}
 # interaction {{{
 [Interaction]
+persuade - убедить - cause (someone) to do something through reasoning or argument
+emphasis - акцент - special importance, value, or prominence given to something
+cheek - нашлость - impertinent talk or behavior
 contempt - презрение - the feeling that a person or a thing is beneath consideration, worthless, or deserving scorn
 sneer - насмешка - a contemptuous or mocking smile, remark, or tone
 indulge - баловать \ потакать - allow oneself to enjoy the pleasure of
@@ -376,6 +393,8 @@ yip - тявкать
 humid - влажный
 erupt - извергать
 bough - ветвь
+eel - угорь
+babool - бабуин
 # }}}
 # things{{{
 [Things]
@@ -417,6 +436,7 @@ chopsticks - палочки для еды
 # }}}
 # food{{{
 [Food]
+trail mix - ассорти - a mixture of dried fruit and nuts eaten as a snack food, originally by walkers and campers.
 sip - глоток
 flour - мука
 strawberry - клубника
@@ -525,6 +545,7 @@ prescription - рецепт (на лекарство)
 abandoned - заброшенный
 contingency - случайность \ непредвиденные обстоятельства
 suffices - хватает (на что-то) - Food buyed will suffice for all of us
+milieu - окружающая среда - a person's social environment
 # }}}
 # hygiene{{{
 [Hygiene]
@@ -533,6 +554,19 @@ stench - зловоние
 # }}}
 # verbs{{{
 [Verbs]
+grieve - скорбить - suffer grief
+sputters - бормочет
+sprouting - прорастать - (of a plant) put forth shoots
+cling - цепляться - (of a person or anumal) hold on tightly to
+forsake - оставлять - abandon (someone or something)
+thwart - помешать - prevent (someone) from accomplishing something
+yawn - зевать - involuntarily open one's mouth wide and inhale deeply due to tiredness or boredom
+concern - относиться - relate to; be about
+freaking out - волноваться - behave or cause to behave irrationally and ucontrollably, with enthusiasm, excitement, fear, or madness
+carve - высекать - dcxur (a hard material) ir order to produce an aesthetically pleasing object or design
+expire - истекать
+fasten - скрепить - close or join securely
+insist - настоять - demand something forcefuly, not accepting refusal
 emanate - исходить
 hitch - запрягать - move (something) into a different position with a jerk
 extinguish - тушить
@@ -572,6 +606,18 @@ since - поскольку
 # }}}
 # noun{{{
 [Noun]
+riddle - загадка - a question or statement intentionally phrased so as to require ingenuity in ascertaining its answer or meaning, typically presented as a game
+bid - предложение - offer (a certain price) for something, especially at an auction
+farefwell - прощальный жест - an act of parting or of marking someone's departure
+sanity - вменяемость - the ability to think and behave in a normal and rational manner; sound mental health
+spittle - слюта
+investigation - изучание \ расследование - the action of investigating something or someone; formal or systematic examination or research
+scent - нюх - a distinctive smell, expecially one that is pleasant
+sentry - караул - a soldier stationed to keep quard or to control access to a place
+desire - страсть - a strong feeling of wanting to have something or wishing for something to happen
+vow - клятва - a solemn promise
+cheers - ура - expressing good wishes, in particular
+flavor - вкус - the distinctive taste of a food or drink
 chime - звон - a bell or a metal bar or tube, typically one of a set tuned to produce a melodious series of ringing sounds when struck
 salvage - спасение
 posterity - потомки
@@ -659,11 +705,13 @@ descent - спуск
 aids - вспомогательные средства
 # }}}
 # adverbs{{{
-[Adverbs]
+[Adverb]
+firm - твердо - having a solid, almost unyielding surface or structure
+impending - предстоящий - be about to happen
+snappy - энергично
 outwardly - снаружи - of, on, or from the outside
 abruptly - резко
 merely - просто - like just; only
-loose - свободно
 prosperous - процветающий
 fluently - бегло
 limply - безвольно
@@ -672,8 +720,13 @@ direcyly - непосредственно
 # }}}
 # adjectives{{{
 [Adjectives]
+furrowed - морщинистый - (of the forehead or face) marked with lines or wrinkles
+topnotch - превосходный - of the highest quality; excellent
+impertinent - дерзкий - now showing proper respect; rude
+impertinent - неуместный - not pertinent to a particular matter; irrelevant
+marvelous - дивный - causing great wonder; extraordinary
 spoile - испорченный
-filthy - отвратительный
+filthy - отвратительный - disgustingly dirty
 tender - нежно
 evident - очевидный \ явный - plain or obvious; clearly seen or understood
 loose - свободный - not firmly or tightly fixed in place; detached or able to be detached
@@ -713,8 +766,13 @@ Saudi Arabian
 # }}}
 # phrase{{{
 [Phrase]
+make out something/someone - to see, hear, or understand something or someone with difficulty - I couldn't make out what he said
+work on somebody -  - to try to persuade or influence someone - I'm working on my father to get him to take me to the airport
+He did like he pleased - Он сделал так, как хотел
+Behave yourself - веди себя хорошо
 But what use is it - но какая польза от этого
 indeed - в самом деле - used to emphasize a statement or response confirming something already suggested \ used to introduce a further and stronge or more surprising point
+mere - всего лишь - that is solely or no more or better that what is specified
 without my leave - без моего разрешения - - be cautious what you read in my mind without my leave
 don't have nothing to do with that - не умеет к этому никакого отношения
 off with you - иди - patronising or dismissive connotation, off means away, word order is unusual
