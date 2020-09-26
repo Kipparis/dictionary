@@ -33,6 +33,7 @@ yet - но\хотя
 # }}}
 # colors{{{
 [Colors]
+amber - янтарный
 tan, beige - бежевый, загарелый
 # }}}
 # math{{{
@@ -123,6 +124,11 @@ unwind - расслабиться
 # }}}
 # human parts{{{
 [Human parts]
+palm - ладонь - the inner surface of the hand between the wrist and fingers
+limb - конечность - an arm or leg or a person or four-legged animal, or a bird's wing
+retina - сетчатка
+pupil - зрачок - the dark circular opening in the center of the iris of the eye, varying in size to regulate the amount of light reaching the retina
+stubble - щетина - the cut stalks of grain plants left sticking out of the ground after the grain is harvested
 lap - колени
 wrinkle - морщина
 cheek - щека - either side of the face below the eye
@@ -172,6 +178,8 @@ transfixed - потрясен(в шоке)
 # }}}
 # position{{{
 [Position]
+intruder - нарушитель - a person who intrudes, especially into a building with criminal intent
+pupil - ученик - a student in school
 nerd - ботан - a foolish or contemptible person who lacks social skills or is boringly studious
 rowdy - дебошир
 duc - герцог
@@ -200,6 +208,7 @@ tailor - портной
 # }}}
 # vehicle {{{
 [Vehicle]
+oar - весло - a pole with a flat blade, pivoting in an oar lock, used to row or steer a boat through the water
 mast - мачта
 gasoline - бензин
 motorway - автомагистраль
@@ -233,6 +242,7 @@ leaden - свинцовый
 # }}}
 # actions {{{
 [Action]
+scowl - хмуриться - frown in an angry or bad-tempered way
 hurl - швырять - throw (an object) with great force
 fall into - делиться - - All git configuration options fall into two categories
 wonder - интересоваться - desire or be curious to know something
@@ -374,6 +384,10 @@ jaywalk - неосторожно переходить улицу
 # }}}
 # nature{{{
 [Nature]
+maw - пасть - the jaws or throat of a voracious animal - wolf's maw
+foliage - листва - plant leaves collectively
+hound - гончая - a dog of a breed used for hunting, especially one able to track by scent
+sparrow - воробей
 crimson - малиновый
 gull - чайка
 flock - стадо
@@ -455,6 +469,11 @@ muesli - мюсли
 pineapple - ананас
 pour - наливать
 # }}}
+# tool {{{
+[Tool]
+tweezers - пинцет - a small instrument like a pair of pincers for plucking out
+hairs and picking up small objects
+# }}}
 # materials{{{
 [Materials]
 cotton - хлопок
@@ -483,6 +502,8 @@ inward - внутрь
 # }}}
 # location {{{
 [Location]
+grove - роща - a small wood, orchard, or group of trees
+ridge - горный хребет - a long narrow hilltop, mountain range, or watershed
 pitfall - западня
 manor - поместье
 cradle - колыбель
@@ -501,6 +522,7 @@ frontier - граница
 refuge - убежище
 alcove - ниша
 cesspit - выгребная яма
+pit - яма - a large gole in the ground
 # }}}
 # lighing{{{
 [Lighing]
@@ -549,11 +571,40 @@ milieu - окружающая среда - a person's social environment
 # }}}
 # hygiene{{{
 [Hygiene]
+comb - расческа - prepare (wool, flax, or cotton) for manufacture with a comb
 shave - брить
 stench - зловоние
 # }}}
 # verbs{{{
-[Verbs]
+[Verb]
+nourish - удобрять - provide with the food or other substances necessary for growth, health, and good condition
+tug - тащить ; тянуть - pull (something) hard or suddenly
+mars - портит - - It's the only thing that mars the perfect surface of the ice
+devilitate - истощать - make (someone) weak and infirm
+trudge - тащиться - walk slowly and with heavy steps, typically because of exhaustion or harsh conditions
+encroach - вторгаться - intrude on (a person's territory or a thing considered to be a right)
+reign - царствовать - hold royal office; rule as king or queen
+shear - срезать - break off or cause to break off, owing to a structural strain
+lament - оплакивать - mourn (a person's loss or death)
+sway - качаться - move or cause to move slowly or rhythmically backward and forward or from side to side
+taper - сужаться - diminish or reduce in thinkness toward one end - taper into a slender trunk
+recede - отступать - go or move back or further away from a previoius position
+unite - объединять - come or bring together for a common purpose or action
+rot - гнить
+glisten - блестеть - (of something wet or greasy) shine; glitter
+protrude - высовываться - extend beyond or above a surface
+shatter - разбиться - break or cause to break suddenly and vioilently into pieces
+entertain - развлекать - provide (someone) with amusement or enjorment
+embroider - вышивать - dtcorate (cloth) by sewing patterns on it with thread
+gather - собираться - come together; asseble or accumulate
+endeavor - прилагать усилия - try hard to do or achieve something
+waft - навевать - pass or cause to pass easily or gently through or as if through the air
+flock - стекаться - congregate or mass in a flock or large group
+betray - предавать - expose (one's country, a group, or a person) to danger by treacherously giving information to an enemy
+lure - приманивать - tempt (a person or animal) to do something or to go somewhere, especially by offering some form of reward
+hesitate - стесняться - pause before saying or doing something, especially through uncertainty
+comb - расчесывать - untangle or arrange (the hair) by drawing a comb through it
+groom - ухаживать - brush and clean the coat of (a horse, dog, or other animal)
 grieve - скорбить - suffer grief
 sputters - бормочет
 sprouting - прорастать - (of a plant) put forth shoots
@@ -593,7 +644,7 @@ dangle - свисать
 bloat - раздуваться
 bulge - выпирать
 suspend - подвешивать \ приостанавливать
-jolt - трясти
+jolt - трясти - push or shake (someone or something) abruptly and roughly
 gaze - вглядываться
 hiss out - выходить со свистом
 seeth - кипеть \ бурлить \ пениться
@@ -606,6 +657,27 @@ since - поскольку
 # }}}
 # noun{{{
 [Noun]
+massacre - резня - an indisciminate and brutal slaughter of people
+soil - почва - the upper layer of earth in which plants grow
+slaughter - резня
+accomplice - соучастник - a person who helps another commit a crime
+smear - мазок - a mark or streak of a greasy or sticky substance
+discord - раздор - disagreement between people
+commotion - волнение - a state of confused and noisy disturbance
+defiler - осквернитель
+boon - благодеяние - a thing that is helpful or beneficial
+inevitability - неизежность - the quality of being certain to happen
+resident - постоялец - a person who lives somewhere permanently or on a long-term basis
+splendor - великолепие - magnificent and splendid appearance; grandeur
+ransom - выкуп - a sum of money or other payment demanded or paid for the release of a prisoner
+disgrace - бесчестие - loss of reputation or respect as the result of a dishonorable action
+remedy - лекарство - a medicine or treatment for a disease or injury
+wisdom - мудрость - the quality of having experience, knowledge, and good judgment; the quality of being wise
+pyre - погребальный костер - a heap of combustible material, expecially one for burning a corpse as part of funeral ceremony
+pyre- - погребальный костер - a heap of combustible material, expecially one for burning a corpse as part of funeral ceremony
+cause - дело - a principle, aim, or movement that, because of a deep commitment, one is prepared to defend or advocate
+prowess - сильная сторона - skill or expertise in a particular activity or field
+worth - ценность - the value equivalent to that of someone or something under consideration; the level at which someone or something deserves to be valued or rated
 riddle - загадка - a question or statement intentionally phrased so as to require ingenuity in ascertaining its answer or meaning, typically presented as a game
 bid - предложение - offer (a certain price) for something, especially at an auction
 farefwell - прощальный жест - an act of parting or of marking someone's departure
@@ -706,6 +778,7 @@ aids - вспомогательные средства
 # }}}
 # adverbs{{{
 [Adverb]
+thrive - процветать - (of a child, animal, or plant) grow or develop well or vigorously
 firm - твердо - having a solid, almost unyielding surface or structure
 impending - предстоящий - be about to happen
 snappy - энергично
@@ -719,7 +792,19 @@ rigidly - жестко
 direcyly - непосредственно
 # }}}
 # adjectives{{{
-[Adjectives]
+[Adjective]
+infirm - немощный - not physically or mentally strong, especially through age or illness
+frigid - ледяной - very cold in temperature
+dire - серьезный - (of a situation or event) extremely serious or urgent
+gnarled - шишковатый - knobbly, rough, and twisted, especially with age
+slender - тощий - (of a person or part of the body) gracefully thin
+vile - подлый - extremely unpleasant
+scaly - чешуйчатый - covered in scales
+lingering - затяжной - lasting for a long time or slow to end
+tranquil - спокойный - free from disturbance; calm
+dapple - пятнистый - a patch or spot of color or light
+sparse - редкий - thinly dispersed or scattered
+cozy - уютный - giving a feeling of comfort, warmth, and relaxation
 furrowed - морщинистый - (of the forehead or face) marked with lines or wrinkles
 topnotch - превосходный - of the highest quality; excellent
 impertinent - дерзкий - now showing proper respect; rude
@@ -766,7 +851,8 @@ Saudi Arabian
 # }}}
 # phrase{{{
 [Phrase]
-make out something/someone - to see, hear, or understand something or someone with difficulty - I couldn't make out what he said
+adopt an air of something - - get look like and behave like something
+make out something/someone - - to see, hear, or understand something or someone with difficulty - I couldn't make out what he said
 work on somebody -  - to try to persuade or influence someone - I'm working on my father to get him to take me to the airport
 He did like he pleased - Он сделал так, как хотел
 Behave yourself - веди себя хорошо
