@@ -62,6 +62,8 @@ linen - льняное полотно
 # }}}
 # feature{{{
 [Feature]
+jarring - раздражающий - incongruous in a striking or shocking way; clashing
+viscosity - вязкость - the state of being think, sticky, and semifluid in consistency, due to internal friction
 malignant - злостный - malevolent
 wrinkled - морщинистый - having wrirnkles or slight folds
 fabulous - невероятный - extraordinary, especially extraordinarily large
@@ -239,6 +241,8 @@ proponent - сторонник
 [Material]
 powder - порошок
 leaden - свинцовый
+oil - масло
+grease - густая смазка - a thick oily substance, especially as used as a lubricant
 # }}}
 # actions {{{
 [Action]
@@ -657,6 +661,7 @@ since - поскольку
 # }}}
 # noun{{{
 [Noun]
+disparity - несоответствие - a great difference
 massacre - резня - an indisciminate and brutal slaughter of people
 soil - почва - the upper layer of earth in which plants grow
 slaughter - резня
