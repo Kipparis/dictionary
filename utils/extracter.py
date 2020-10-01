@@ -43,6 +43,8 @@ def get_word_transcription(phrase):
         fp.close()
 
         soup = BeautifulSoup(html_page, 'html.parser')
-        translations.append(soup.find(id='us_tr_sound').span.text[2:-1])
+        entry = soup.find(id='us_tr_sound')
+        if entry is not None:
+            translations.append(entry.span.text[2:-1])
 
     return(" ".join(translations))
