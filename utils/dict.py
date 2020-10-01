@@ -70,6 +70,8 @@ class Dictionary:
                 if not line: continue   # if line empty we have nothing to do with it
                 search = re.search(r"\A\[.*\]", line) # pattern for category name
                 if not search or not search.group(0):
+                    # TODO: sometimes i can pass something like this
+                    # tie, necktie - галстук
                     word_info = [e.strip() for e in line.split("-")]
                     while len(word_info) < 4:
                         word_info.append("")

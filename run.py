@@ -11,6 +11,8 @@ from utils.io import *
 
 import argparse
 
+# TODO: when you can't unswer maximum words, you'll be given only subset
+# to train, and then you come back to normal training
 parser = argparse.ArgumentParser(description="write a test, store"
         " results in db, than programm will decide what words to give"
         " you",
