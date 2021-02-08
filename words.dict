@@ -39,6 +39,7 @@ tan, beige - бежевый, загарелый
 # math{{{
 [Math]
 intersection - пересечение/перекресток
+quotient - частное - a result obtained by dividing one quantity by another
 # }}}
 # clothes{{{
 [Clothes]
@@ -62,6 +63,8 @@ linen - льняное полотно
 # }}}
 # feature{{{
 [Feature]
+water-tight - водонепроницаемый
+light-sided - непрочная
 jarring - раздражающий - incongruous in a striking or shocking way; clashing
 viscosity - вязкость - the state of being think, sticky, and semifluid in consistency, due to internal friction
 malignant - злостный - malevolent
@@ -169,6 +172,7 @@ complexion - цвет лица/вид
 # }}}
 # human disasters{{{
 [Human disasters]
+injure - ранение
 pox - сифилис
 ailmant - недуг
 hiccups - икота
@@ -180,6 +184,8 @@ transfixed - потрясен(в шоке)
 # }}}
 # position{{{
 [Position]
+bartender - бармен - a person who mixes and serves drinks at a bar
+sailor - мореплаватель
 intruder - нарушитель - a person who intrudes, especially into a building with criminal intent
 pupil - ученик - a student in school
 nerd - ботан - a foolish or contemptible person who lacks social skills or is boringly studious
@@ -210,6 +216,9 @@ tailor - портной
 # }}}
 # vehicle {{{
 [Vehicle]
+cargo ship - грузовой корабль
+tyres - шины
+petrol - бензин
 oar - весло - a pole with a flat blade, pivoting in an oar lock, used to row or steer a boat through the water
 mast - мачта
 gasoline - бензин
@@ -226,7 +235,7 @@ valve - клапан
 pistons - поршни
 pressure rings - уплотнительное кольцо
 piston rings - поршневые кольца
-vessel - судно
+vessel - судно - a ship or large boat
 # }}}
 # state {{{
 [State]
@@ -239,6 +248,7 @@ proponent - сторонник
 # }}}
 # material {{{
 [Material]
+glass-fiber - стекловолокно
 powder - порошок
 leaden - свинцовый
 oil - масло
@@ -246,6 +256,20 @@ grease - густая смазка - a thick oily substance, especially as used 
 # }}}
 # actions {{{
 [Action]
+stub - вырывать с корнем - dig up (a plant) by the roots
+crush - сокрушать - (of a government or state) violently subdue (opposition or a rebellion)
+renovate - восстанавливать - restore (something old, especially a building) to a good state of repair
+demolish - сносить
+burgle - кража со взломом
+fulfill - выполнять - bring to completion or reality; achieve or realize (something desired, promised, or predicted)
+conduct - вести, проводить
+vary - изменять
+to abandon - бросать - give up completely (a course of action, a practice, or a way of thinking)
+offload - разгрузить
+to master - осваивать
+to keep afloat - оставаться на плаву
+carry on - проводить
+sail - управлять судном
 scowl - хмуриться - frown in an angry or bad-tempered way
 hurl - швырять - throw (an object) with great force
 fall into - делиться - - All git configuration options fall into two categories
@@ -376,6 +400,8 @@ dozen - дюжина
 # }}}
 # town{{{
 [Town]
+palace - дворец
+shipyard - верфь
 trellises - подпоры
 cobbled - мощеные
 misery - нищета
@@ -416,6 +442,7 @@ babool - бабуин
 # }}}
 # things{{{
 [Things]
+vessel - сосуд - a hollow container, especially one used to hold liquid, such as a bowl or cask
 lever - рычаг
 grip - рукоятка
 pencil sharpener - точилка
@@ -454,6 +481,7 @@ chopsticks - палочки для еды
 # }}}
 # food{{{
 [Food]
+swiss cheese - швейцарский сыр - sheese of a style originating in Switzerland, typically containing large holes
 trail mix - ассорти - a mixture of dried fruit and nuts eaten as a snack food, originally by walkers and campers.
 sip - глоток
 flour - мука
@@ -506,6 +534,10 @@ inward - внутрь
 # }}}
 # location {{{
 [Location]
+shelter - убежище - a place giving temporary protection from bad weather or danger
+coast - побережье
+to walk along the road - идти по дороге
+high ground - возвышенность
 grove - роща - a small wood, orchard, or group of trees
 ridge - горный хребет - a long narrow hilltop, mountain range, or watershed
 pitfall - западня
@@ -558,6 +590,7 @@ bank counter - окошко в банке
 # }}}
 # general{{{
 [General]
+emergency - аварийная ситуация
 man - мужчина
 men - мужчины
 people - люди
@@ -581,6 +614,13 @@ stench - зловоние
 # }}}
 # verbs{{{
 [Verb]
+denote - обозначать - be a sign of; indicate
+vaporize - испаряться - convert or be converted into vapor
+facilitate - облегчить - make (an action or process) easy or easier
+soothe - успокаивать - gently calm (a person of their feelings)
+disintegrate - распадаться
+encounter - встречаться на пути
+amplify - усилить - increase the volume of (sound), especially using an amplifier
 nourish - удобрять - provide with the food or other substances necessary for growth, health, and good condition
 tug - тащить ; тянуть - pull (something) hard or suddenly
 mars - портит - - It's the only thing that mars the perfect surface of the ice
@@ -661,6 +701,14 @@ since - поскольку
 # }}}
 # noun{{{
 [Noun]
+shortcoming - недостаток - a fault or failure to meet a certain standard, typically in a person's character, a plan, or a system
+hull - оболочка - the main body of a ship or other vessel, including the bottom, sides, and deck but not the masts, superstructure, rigging, engines, and other fittings
+bribe - взятка - persuade (someone) to act in one's favor, typically illegally or dishonesly, by a gift of money or other inducement
+needle - игла
+treatment - уход - the manner in which someone behaves toward or deals with someone or something
+pump - насос
+hose - шланг
+float - поплавок
 disparity - несоответствие - a great difference
 massacre - резня - an indisciminate and brutal slaughter of people
 soil - почва - the upper layer of earth in which plants grow
@@ -798,6 +846,16 @@ direcyly - непосредственно
 # }}}
 # adjectives{{{
 [Adjective]
+inadequate - неполноценный - lacking the quality or quantity required; insufficient for a purpose
+convex - выпуклый - having an outline or surface curved like the exterior of a circle or sphere
+irrelevant - несущественный - not connected with or relevant to something
+precious - драгоценный - (of an object, substance, or resource) of great value; not to be wasted or treated carelessly
+simultaneously - одновременно
+anamenable - неподдающийся
+sane - разумный - (of a person) of sound mind; not mad or mentally ill
+compound - составной - a thing that is composed of two or more separate elemeents
+aware - осведомленный - having knowledge or perception of a situation or fact
+thick - толстый - with opposite sides or surfaces that are great or relatively great distance apart
 infirm - немощный - not physically or mentally strong, especially through age or illness
 frigid - ледяной - very cold in temperature
 dire - серьезный - (of a situation or event) extremely serious or urgent
@@ -833,7 +891,6 @@ urgent - срочный
 narrow - узкий
 consecutive - последовательный
 pulpy - сочный
-prescription - рецепт (на лекарство)
 impassable - непроходимый
 thin - тонкий
 crooked - изогнутый
@@ -856,6 +913,12 @@ Saudi Arabian
 # }}}
 # phrase{{{
 [Phrase]
+if only + past simple - если бы
+is made up of - состоит из
+get your bearings - сориентироваться
+jokes aside - штуки в сторону
+showing off - хваставство
+outside world - остальной мир
 adopt an air of something - - get look like and behave like something
 make out something/someone - - to see, hear, or understand something or someone with difficulty - I couldn't make out what he said
 work on somebody -  - to try to persuade or influence someone - I'm working on my father to get him to take me to the airport
