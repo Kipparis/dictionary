@@ -205,6 +205,8 @@ if args.interactive:
     # get int from user input (assume that is N)
     # take N-th entry in `choices_dict`
     # call function (first element in dict entry)
+    # TODO: enter - repeat last command
+    # q, e - exit
     while True:
         try:
             list(choices_dict.keys())[int(input(build_prompt()))-1]()
@@ -214,7 +216,7 @@ if args.interactive:
         except (KeyboardInterrupt, EOFError):
             # have to pass instance explicitly,
             # otherwise it doesn't see it
-            quit(words_dict)
+            quit()
 
 # Formalities:
 #

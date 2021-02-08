@@ -12,6 +12,10 @@ def terminal_deminsions():
 def linewise_line():
     return f"{ACTION_DELIMITER}"*int(terminal_deminsions()[-1])
 
+def page_break():
+    return "\n" * int(terminal_deminsions()[0])
+
+
 def prompt():
     return get_env("PS3", DEFAULT_PROMPT)
 

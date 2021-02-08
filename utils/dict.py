@@ -196,12 +196,14 @@ class Dictionary:
                 .join(self.Category_model)
                 .where(self.Category_model.name.in_(category_list)))
 
-        # then choose words depending on improve rules
-        if improve:
-            # get less unswered words
-            words = words.order_by(self.Result_model.score)
+        # get less unswered words
+        # words = words.order_by(fn.random(), self.Result_model.score)
+        words = words.select(self.Result_model.id).order_by(self.Result_model.score).limit(w_qty)
+        ret_words = (self.Result_model.select()
+                    .where(self.Result_model.id.in_(words))
+                    .order_by(fn.random()))
         print("(get_words_for_training) Words len: {}".format(len(words)))
-        # then slice word qty
-        # words = words.limit(w_qty).namedtuples()
-        words = words.limit(w_qty)
-        return words
+        print("(get_words_for_training) Get words:\n{}".format(words))
+        print("(get_words_for_training) Words len: {}".format(len(ret_words)))
+        print("(get_words_for_training) Get words:\n{}".format(ret_words))
+        return ret_words
