@@ -39,6 +39,8 @@ parser.add_argument("-f", "--test_features", help="test features"
                                 " settings file", action="store_true", default=False)
 parser.add_argument("-t", "--transcription", help="get transcription for specified string",
                                 type=str, metavar="phrase/word")
+parser.add_argument("--csv", help="specify csv file for importing words",
+                    type=str, dest="csv_fn")
 
 args = parser.parse_args()
 
@@ -54,6 +56,16 @@ if args.transcription:
     display_picture(get_word_transcription(args.transcription))
 
 words_dict = Dictionary(words_file_name=args.words_file, database_file_name=args.db_file)
+
+if args.csv_fn:
+    for native, transl in get_csv_translations_entries(args.csv_fn):
+        print("write or select category for new translation")
+        print("\n".join([f"\t{i+1}: {cat}" for i, cat in enumerate(words_dict.categories)]))
+        category_name = input("write number or new category: ")
+        category = words_dict.get_or_create_category(category_name)
+        words_dict.insert_new_translation(native, transl, category)
+
+    print("all translations inserted")
 
 # this will create the tables with the appropriate columns, foreign key
 # constaints, etc ...

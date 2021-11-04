@@ -205,3 +205,22 @@ class Dictionary:
         # words = words.limit(w_qty).namedtuples()
         words = words.limit(w_qty)
         return words
+
+    def get_or_create_category(self, category_name):
+        """
+        if category_name is id, than that category is searched
+        if category_name is str, than that category is created
+        """
+        try:
+            category = self.Category_model.get_by_id(int(category_name))
+        except ValueError:
+            category, created = self.Category_model.get_or_create(name=category_name)
+        return category
+
+    def insert_new_translation(self, native, translation, category):
+        """insert new translation into database"""
+        result, created   = self.Result_model.get_or_create(
+                word=translation,
+                native=native,
+                category=category)
+
